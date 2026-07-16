@@ -15,9 +15,9 @@ const LESSONS = [
     ],
     vocabulary: [
       { de: 'die Firma', ru: 'компания' },
-      { de: 'ziemlich stressig', ru: 'довольно напряжённо' },
-      { de: 'sich sicherer fühlen', ru: 'чувствовать себя увереннее' },
-      { de: 'realistischer planen', ru: 'планировать реалистичнее' }
+      { de: 'ziemlich stressig', ru: ' - довольно напряжённо' },
+      { de: 'sich sicherer fühlen', ru: ' - чувствовать себя увереннее' },
+      { de: 'realistischer planen', ru: ' - планировать реалистичнее' }
     ],
     questions: [
       'Warum war der Anfang schwierig?',
@@ -39,10 +39,10 @@ const LESSONS = [
       'Jetzt überlegt sie, ob sie lieber etwas außerhalb wohnen soll.'
     ],
     vocabulary: [
-      { de: 'die Wohnung', ru: 'квартира' },
-      { de: 'besichtigen', ru: 'осматривать' },
-      { de: 'die Lage', ru: 'расположение' },
-      { de: 'die Miete', ru: 'арендная плата' }
+      { de: 'die Wohnung', ru: ' - квартира' },
+      { de: 'besichtigen', ru: ' - осматривать' },
+      { de: 'die Lage', ru: ' - расположение' },
+      { de: 'die Miete', ru: ' - арендная плата' }
     ],
     questions: [
       'Was sucht die Schwester?',
@@ -64,10 +64,10 @@ const LESSONS = [
       'Nur so bleibt sie ein hilfreiches Werkzeug.'
     ],
     vocabulary: [
-      { de: 'ablenken', ru: 'отвлекать' },
-      { de: 'nützlich', ru: 'полезный' },
-      { de: 'bewusst', ru: 'осознанно' },
-      { de: 'das Werkzeug', ru: 'инструмент' }
+      { de: 'ablenken', ru: ' - отвлекать' },
+      { de: 'nützlich', ru: ' - полезный' },
+      { de: 'bewusst', ru: ' - осознанно' },
+      { de: 'das Werkzeug', ru: ' - инструмент' }
     ],
     questions: [
       'Welche Vorteile haben digitale Geräte?',
