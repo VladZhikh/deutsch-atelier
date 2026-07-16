@@ -1,0 +1,36 @@
+
+[
+  {
+    "id": "review-001",
+    "displayName": "Anna",
+    "rating": 5,
+    "comment": "Очень удобный формат коротких уроков и хороший плеер по фразам.",
+    "language": "ru",
+    "publishConsent": true,
+    "status": "approved",
+    "createdAt": "2026-07-15T10:30:00Z",
+    "source": "email"
+  },
+  {
+    "id": "review-002",
+    "displayName": "Maksym",
+    "rating": 5,
+    "comment": "Мультиязычный интерфейс и запись голоса — отличная идея.",
+    "language": "uk",
+    "publishConsent": true,
+    "status": "approved",
+    "createdAt": "2026-07-15T11:00:00Z",
+    "source": "email"
+  },
+  {
+    "id": "review-003",
+    "displayName": "Laura",
+    "rating": 4,
+    "comment": "The lesson structure is clear and easy to follow.",
+    "language": "en",
+    "publishConsent": true,
+    "status": "approved",
+    "createdAt": "2026-07-15T12:00:00Z",
+    "source": "email"
+  }
+]

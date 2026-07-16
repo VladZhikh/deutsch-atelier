@@ -1,0 +1,67 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deutsch Atelier — О проекте</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="about">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">DE</span>
+        <span class="brand-text">Deutsch Atelier</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" data-i18n="nav_home">Главная</a>
+        <a href="levels.html" data-i18n="nav_levels">Уровни</a>
+        <a href="lesson.html?id=b1-01" data-i18n="nav_lesson">Урок</a>
+        <a href="feedback.html" data-i18n="nav_feedback">Отзывы</a>
+        <a href="reviews.html" data-i18n="nav_reviews">Отзывы пользователей</a>
+        <a href="about.html" data-i18n="nav_about">О проекте</a>
+        <a href="contact.html" data-i18n="nav_contact">Контакты</a>
+      </nav>
+
+      <div class="header-tools">
+        <select id="languageSwitcher" class="language-switcher" aria-label="Language switcher">
+          <option value="ru">RU</option>
+          <option value="uk">UA</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-head">
+      <h1 data-i18n="about_title">О проекте</h1>
+      <p data-i18n="about_text">Deutsch Atelier — открытый сайт для практики немецкого B1/B2.</p>
+    </div>
+
+    <section class="content-card">
+      <h2 data-i18n="about_mission_title">Миссия</h2>
+      <p data-i18n="about_mission_text">Сделать короткие уроки, аудирование и устную практику удобными и доступными без подписок.</p>
+    </section>
+
+    <section class="content-card">
+      <h2 data-i18n="about_method_title">Метод</h2>
+      <ul>
+        <li data-i18n="about_method_1">Короткие тексты B1/B2</li>
+        <li data-i18n="about_method_2">Фразовый плеер</li>
+        <li data-i18n="about_method_3">Shadowing и пересказ</li>
+        <li data-i18n="about_method_4">Запись голоса и STT</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p data-i18n="footer_text">Deutsch Atelier · открытый сайт для изучения немецкого.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

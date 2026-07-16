@@ -1,0 +1,118 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deutsch Atelier</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">DE</span>
+        <span class="brand-text">Deutsch Atelier</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" data-i18n="nav_home">Главная</a>
+        <a href="levels.html" data-i18n="nav_levels">Уровни</a>
+        <a href="lesson.html?id=b1-01" data-i18n="nav_lesson">Урок</a>
+        <a href="feedback.html" data-i18n="nav_feedback">Отзывы</a>
+        <a href="reviews.html" data-i18n="nav_reviews">Отзывы пользователей</a>
+        <a href="about.html" data-i18n="nav_about">О проекте</a>
+        <a href="contact.html" data-i18n="nav_contact">Контакты</a>
+      </nav>
+
+      <div class="header-tools">
+        <select id="languageSwitcher" class="language-switcher" aria-label="Language switcher">
+          <option value="ru">RU</option>
+          <option value="uk">UA</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="home_eyebrow">Открытый доступ · B1/B2 · client-side</p>
+        <h1 data-i18n="home_title">Немецкий, который удобно слушать, повторять и говорить.</h1>
+        <p class="lead" data-i18n="home_lead">
+          Короткие уроки, фразовый плеер, запись голоса, мультиязычный интерфейс и отзывы пользователей.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="levels.html" data-i18n="home_cta_levels">Перейти к урокам</a>
+          <a class="btn btn-secondary" href="feedback.html" data-i18n="home_cta_feedback">Оставить отзыв</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2 data-i18n="home_card_title">Что есть на сайте</h2>
+        <ul class="feature-list">
+          <li data-i18n="home_feature_1">Уроки B1 и B2 с аудированием</li>
+          <li data-i18n="home_feature_2">Плеер по фразам с паузой и повтором</li>
+          <li data-i18n="home_feature_3">Запись голоса и Speech-to-Text</li>
+          <li data-i18n="home_feature_4">Мультиязычный интерфейс</li>
+          <li data-i18n="home_feature_5">Отзывы и оценки пользователей</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="section-head">
+        <h2 data-i18n="home_section_title">Как устроено обучение</h2>
+        <p data-i18n="home_section_text">
+          Сайт построен так, чтобы вы могли быстро открыть урок, прослушать фразы, повторить их вслух и сохранить прогресс.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="info-card">
+          <h3 data-i18n="home_step_1_title">1. Слушайте</h3>
+          <p data-i18n="home_step_1_text">Фразовый SpeechSynthesis-плеер помогает воспринимать немецкую речь небольшими сегментами.</p>
+        </article>
+        <article class="info-card">
+          <h3 data-i18n="home_step_2_title">2. Повторяйте</h3>
+          <p data-i18n="home_step_2_text">Shadowing mode даёт паузу после каждой фразы, чтобы вы могли повторить услышанное.</p>
+        </article>
+        <article class="info-card">
+          <h3 data-i18n="home_step_3_title">3. Говорите</h3>
+          <p data-i18n="home_step_3_text">Запишите свой ответ, проверьте распознавание речи и сравните себя с оригиналом.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="section-head">
+        <h2 data-i18n="home_levels_title">Основной фокус — B1 и B2</h2>
+        <p data-i18n="home_levels_text">
+          A1 и A2 можно оставить как короткие разделы, а основное внимание уделить практичным урокам среднего уровня.
+        </p>
+      </div>
+
+      <div class="level-preview">
+        <a class="level-card" href="levels.html#b1">
+          <span class="level-tag">B1</span>
+          <h3 data-i18n="home_b1_title">Короткие жизненные темы</h3>
+          <p data-i18n="home_b1_text">Работа, жильё, здоровье, поездки, покупки, встречи.</p>
+        </a>
+        <a class="level-card" href="levels.html#b2">
+          <span class="level-tag">B2</span>
+          <h3 data-i18n="home_b2_title">Более сложные тексты</h3>
+          <p data-i18n="home_b2_text">Мнения, аргументы, планы, обсуждения и пересказ.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p data-i18n="footer_text">Deutsch Atelier · открытый сайт для изучения немецкого.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

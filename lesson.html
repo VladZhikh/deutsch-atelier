@@ -1,0 +1,137 @@
+<!-- lesson.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deutsch Atelier — Урок</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="lesson">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">DE</span>
+        <span class="brand-text">Deutsch Atelier</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" data-i18n="nav_home">Главная</a>
+        <a href="levels.html" data-i18n="nav_levels">Уровни</a>
+        <a href="lesson.html?id=b1-01" data-i18n="nav_lesson">Урок</a>
+        <a href="feedback.html" data-i18n="nav_feedback">Отзывы</a>
+        <a href="reviews.html" data-i18n="nav_reviews">Отзывы пользователей</a>
+        <a href="about.html" data-i18n="nav_about">О проекте</a>
+        <a href="contact.html" data-i18n="nav_contact">Контакты</a>
+      </nav>
+
+      <div class="header-tools">
+        <select id="languageSwitcher" class="language-switcher" aria-label="Language switcher">
+          <option value="ru">RU</option>
+          <option value="uk">UA</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar">
+        <h2 data-i18n="lesson_sidebar_title">Уроки</h2>
+        <div id="lessonNav" class="lesson-nav"></div>
+      </aside>
+
+      <article class="lesson-content">
+        <div class="lesson-header">
+          <div>
+            <p class="lesson-meta" id="lessonMeta"></p>
+            <h1 id="lessonTitle">Lesson title</h1>
+            <p id="lessonDescription"></p>
+          </div>
+          <div class="lesson-actions-top">
+            <button class="btn btn-secondary" id="markDoneBtn" data-i18n="lesson_mark_done">Отметить как пройдено</button>
+          </div>
+        </div>
+
+        <section class="lesson-panel">
+          <h2 data-i18n="lesson_player_title">Аудирование и повторение</h2>
+          <div class="player-controls">
+            <button class="btn btn-primary" id="playBtn">▶ <span data-i18n="player_play">Играть</span></button>
+            <button class="btn btn-secondary" id="pauseBtn">❚❚ <span data-i18n="player_pause">Пауза</span></button>
+            <button class="btn btn-secondary" id="prevBtn">⟲ <span data-i18n="player_prev">Назад</span></button>
+            <button class="btn btn-secondary" id="nextBtn">⟳ <span data-i18n="player_next">Вперёд</span></button>
+            <button class="btn btn-secondary" id="slowBtn">◷ <span data-i18n="player_slow">Медленно</span></button>
+            <button class="btn btn-secondary" id="shadowBtn">🗣 <span data-i18n="player_shadow">Shadowing</span></button>
+          </div>
+
+          <div class="player-status">
+            <span id="playerStatus"></span>
+            <span id="segmentInfo"></span>
+          </div>
+
+          <div class="progress-bar"><span id="progressBar"></span></div>
+          <div id="sentenceStrip" class="sentence-strip"></div>
+        </section>
+
+        <section class="lesson-panel">
+          <div class="two-col">
+            <div>
+              <h2 data-i18n="lesson_vocab_title">Словарь</h2>
+              <ul id="vocabList" class="vocab-list"></ul>
+            </div>
+            <div>
+              <h2 data-i18n="lesson_questions_title">Вопросы</h2>
+              <div id="questionList" class="question-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="lesson-panel">
+          <h2 data-i18n="lesson_retell_title">Пересказ и устная речь</h2>
+          <textarea id="retellInput" rows="6" data-i18n-placeholder="lesson_retell_placeholder"></textarea>
+          <div class="panel-actions">
+            <button class="btn btn-secondary" id="saveRetellBtn" data-i18n="lesson_save_notes">Сохранить заметки</button>
+            <button class="btn btn-secondary" id="checkRetellBtn" data-i18n="lesson_check_keywords">Проверить ключевые слова</button>
+            <span id="retellFeedback" class="feedback-text"></span>
+          </div>
+        </section>
+
+        <section class="lesson-panel">
+          <h2 data-i18n="lesson_record_title">Запись голоса</h2>
+          <p data-i18n="lesson_record_text">Запишите свой ответ, затем прослушайте его или сравните с оригиналом.</p>
+          <div class="player-controls">
+            <button class="btn btn-primary" id="recordBtn">⏺ <span data-i18n="record_start">Начать запись</span></button>
+            <button class="btn btn-secondary" id="stopRecordBtn" disabled>■ <span data-i18n="record_stop">Остановить</span></button>
+          </div>
+          <p id="recordStatus" class="status-line"></p>
+          <div id="recordingsList" class="recordings-list"></div>
+        </section>
+
+        <section class="lesson-panel">
+          <h2 data-i18n="lesson_stt_title">Speech-to-Text</h2>
+          <p data-i18n="lesson_stt_text">Если браузер поддерживает распознавание речи, можно продиктовать ответ и получить текст.</p>
+          <div class="player-controls">
+            <button class="btn btn-primary" id="sttStartBtn">🎙 <span data-i18n="stt_start">Старт STT</span></button>
+            <button class="btn btn-secondary" id="sttStopBtn" disabled>■ <span data-i18n="stt_stop">Стоп STT</span></button>
+          </div>
+          <p id="sttStatus" class="status-line"></p>
+          <textarea id="sttOutput" rows="5" data-i18n-placeholder="lesson_stt_placeholder"></textarea>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p data-i18n="footer_text">Deutsch Atelier · открытый сайт для изучения немецкого.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/lesson.js"></script>
+  <script src="assets/js/player.js"></script>
+  <script src="assets/js/recorder.js"></script>
+  <script src="assets/js/speech-to-text.js"></script>
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

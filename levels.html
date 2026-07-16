@@ -1,0 +1,68 @@
+<!-- levels.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deutsch Atelier — Уровни</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="levels">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">DE</span>
+        <span class="brand-text">Deutsch Atelier</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" data-i18n="nav_home">Главная</a>
+        <a href="levels.html" data-i18n="nav_levels">Уровни</a>
+        <a href="lesson.html?id=b1-01" data-i18n="nav_lesson">Урок</a>
+        <a href="feedback.html" data-i18n="nav_feedback">Отзывы</a>
+        <a href="reviews.html" data-i18n="nav_reviews">Отзывы пользователей</a>
+        <a href="about.html" data-i18n="nav_about">О проекте</a>
+        <a href="contact.html" data-i18n="nav_contact">Контакты</a>
+      </nav>
+
+      <div class="header-tools">
+        <select id="languageSwitcher" class="language-switcher" aria-label="Language switcher">
+          <option value="ru">RU</option>
+          <option value="uk">UA</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-head">
+      <h1 data-i18n="levels_title">Каталог уровней</h1>
+      <p data-i18n="levels_text">Основной фокус на B1 и B2. A1 и A2 можно оставить как краткие разделы.</p>
+    </div>
+
+    <section id="b1" class="level-section">
+      <h2 data-i18n="levels_b1_title">B1</h2>
+      <div id="b1Lessons" class="lesson-grid"></div>
+    </section>
+
+    <section id="b2" class="level-section">
+      <h2 data-i18n="levels_b2_title">B2</h2>
+      <div id="b2Lessons" class="lesson-grid"></div>
+    </section>
+
+    <section class="level-section">
+      <h2 data-i18n="levels_other_title">A1 / A2</h2>
+      <p data-i18n="levels_other_text">Эти уровни можно добавить позже как короткие вводные разделы.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p data-i18n="footer_text">Deutsch Atelier · открытый сайт для изучения немецкого.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/levels.js"></script>
+</body>
+</html>
