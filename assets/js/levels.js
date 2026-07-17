@@ -1,35 +1,71 @@
-// assets/js/levels.js
-const LEVELS_DATA = [
-  {
-    level: 'B1',
-    lessons: [
-      { id: 'b1-01', title: 'Работа и баланс', topic: 'Beruf' },
-      { id: 'b1-02', title: 'Поиск квартиры', topic: 'Wohnen' },
-      { id: 'b1-03', title: 'Поездка на выходных', topic: 'Reisen' }
-    ]
-  },
-  {
-    level: 'B2',
-    lessons: [
-      { id: 'b2-01', title: 'Мнение о технологиях', topic: 'Meinung' },
-      { id: 'b2-02', title: 'Учёба и планы', topic: 'Studium' }
-    ]
+async function loadJson(path) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${path}: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    return [];
   }
-];
+}
 
-function renderLessons(containerId, lessons) {
+function renderLessonCards(containerId, lessons) {
   const container = document.getElementById(containerId);
   if (!container) return;
+
+  if (!lessons.length) {
+    container.innerHTML = `
+      <div class="lesson-card">
+        <h3>Пока нет уроков</h3>
+        <p>Этот раздел будет заполнен позже.</p>
+      </div>
+    `;
+    return;
+  }
+
   container.innerHTML = lessons.map(lesson => `
     <a class="lesson-card" href="lesson.html?id=${lesson.id}">
-      <span class="level-tag">${lesson.topic}</span>
+      <span class="level-tag">${lesson.topic || lesson.level}</span>
       <h3>${lesson.title}</h3>
-      <p>${lesson.id}</p>
+      <p>${lesson.description || lesson.id}</p>
     </a>
   `).join('');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLessons('b1Lessons', LEVELS_DATA[0].lessons);
-  renderLessons('b2Lessons', LEVELS_DATA[1].lessons);
-});
+function groupLessonsByLevel(lessons) {
+  return lessons.reduce((acc, lesson) => {
+    const level = (lesson.level || '').toUpperCase();
+    if (!acc[level]) acc[level] = [];
+    acc[level].push(lesson);
+    return acc;
+  }, {});
+}
+
+function updateLevelHeadings(levels) {
+  const b1Title = document.querySelector('#b1 h2');
+  const b2Title = document.querySelector('#b2 h2');
+
+  const b1 = levels.find(level => level.level === 'B1');
+  const b2 = levels.find(level => level.level === 'B2');
+
+  if (b1Title && b1?.title) b1Title.textContent = b1.title;
+  if (b2Title && b2?.title) b2Title.textContent = b2.title;
+}
+
+async function initLevelsPage() {
+  const [levels, lessons] = await Promise.all([
+    loadJson('data/levels.json'),
+    loadJson('data/lessons.json')
+  ]);
+
+  updateLevelHeadings(levels);
+
+  const grouped = groupLessonsByLevel(lessons);
+
+  renderLessonCards('b1Lessons', grouped.B1 || []);
+  renderLessonCards('b2Lessons', grouped.B2 || []);
+}
+
+document.addEventListener('DOMContentLoaded', initLevelsPage);

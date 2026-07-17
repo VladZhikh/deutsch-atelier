@@ -1,4 +1,3 @@
-<!-- lesson.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -40,86 +39,117 @@
     <div class="lesson-layout">
       <aside class="lesson-sidebar">
         <h2 data-i18n="lesson_sidebar_title">Уроки</h2>
-        <div id="lessonNav" class="lesson-nav"></div>
+        <nav id="lessonNav" class="lesson-nav"></nav>
       </aside>
 
-      <article class="lesson-content">
-        <div class="lesson-header">
+      <section class="lesson-content">
+        <div class="lesson-topbar">
           <div>
-            <p class="lesson-meta" id="lessonMeta"></p>
-            <h1 id="lessonTitle">Lesson title</h1>
-            <p id="lessonDescription"></p>
+            <p id="lessonMeta" class="lesson-meta">B1 · Thema</p>
+            <h1 id="lessonTitle">Загрузка урока...</h1>
+            <p id="lessonDescription" class="lesson-description"></p>
           </div>
-          <div class="lesson-actions-top">
-            <button class="btn btn-secondary" id="markDoneBtn" data-i18n="lesson_mark_done">Отметить как пройдено</button>
-          </div>
+
+          <button id="markDoneBtn" class="btn btn-secondary" data-i18n="lesson_mark_done">
+            Отметить как пройдено
+          </button>
         </div>
 
-        <section class="lesson-panel">
-          <h2 data-i18n="lesson_player_title">Аудирование и повторение</h2>
+        <section class="player-card">
+          <div class="section-head">
+            <h2 data-i18n="lesson_player_title">Аудирование и повторение</h2>
+            <div id="segmentInfo" class="segment-info">Фраза 1 / 1</div>
+          </div>
+
           <div class="player-controls">
-            <button class="btn btn-primary" id="playBtn">▶ <span data-i18n="player_play">Играть</span></button>
-            <button class="btn btn-secondary" id="pauseBtn">❚❚ <span data-i18n="player_pause">Пауза</span></button>
-            <button class="btn btn-secondary" id="prevBtn">⟲ <span data-i18n="player_prev">Назад</span></button>
-            <button class="btn btn-secondary" id="nextBtn">⟳ <span data-i18n="player_next">Вперёд</span></button>
-            <button class="btn btn-secondary" id="slowBtn">◷ <span data-i18n="player_slow">Медленно</span></button>
-            <button class="btn btn-secondary" id="shadowBtn">🗣 <span data-i18n="player_shadow">Shadowing</span></button>
+            <button id="playBtn" class="btn">▶ <span data-i18n="player_play">Играть</span></button>
+            <button id="pauseBtn" class="btn">⏸ <span data-i18n="player_pause">Пауза</span></button>
+            <button id="prevBtn" class="btn">← <span data-i18n="player_prev">Назад</span></button>
+            <button id="nextBtn" class="btn"><span data-i18n="player_next">Вперёд</span> →</button>
+            <button id="slowBtn" class="btn btn-secondary" data-i18n="player_slow">Медленно</button>
+            <button id="shadowBtn" class="btn btn-secondary" data-i18n="player_shadow">Shadowing</button>
           </div>
 
-          <div class="player-status">
-            <span id="playerStatus"></span>
-            <span id="segmentInfo"></span>
+          <div class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
           </div>
 
-          <div class="progress-bar"><span id="progressBar"></span></div>
+          <div id="playerStatus" class="player-status">Готов к воспроизведению</div>
+
           <div id="sentenceStrip" class="sentence-strip"></div>
         </section>
 
-        <section class="lesson-panel">
-          <div class="two-col">
-            <div>
-              <h2 data-i18n="lesson_vocab_title">Словарь</h2>
-              <ul id="vocabList" class="vocab-list"></ul>
-            </div>
-            <div>
-              <h2 data-i18n="lesson_questions_title">Вопросы</h2>
-              <div id="questionList" class="question-list"></div>
-            </div>
+        <section class="lesson-grid">
+          <div class="card">
+            <h2 data-i18n="lesson_vocab_title">Словарь</h2>
+            <ul id="vocabList" class="vocab-list"></ul>
+          </div>
+
+          <div class="card">
+            <h2 data-i18n="lesson_questions_title">Вопросы</h2>
+            <div id="questionList" class="question-list"></div>
           </div>
         </section>
 
-        <section class="lesson-panel">
+        <section class="card">
           <h2 data-i18n="lesson_retell_title">Пересказ и устная речь</h2>
-          <textarea id="retellInput" rows="6" data-i18n-placeholder="lesson_retell_placeholder"></textarea>
-          <div class="panel-actions">
-            <button class="btn btn-secondary" id="saveRetellBtn" data-i18n="lesson_save_notes">Сохранить заметки</button>
-            <button class="btn btn-secondary" id="checkRetellBtn" data-i18n="lesson_check_keywords">Проверить ключевые слова</button>
-            <span id="retellFeedback" class="feedback-text"></span>
+          <textarea
+            id="retellText"
+            rows="6"
+            class="text-input"
+            data-i18n-placeholder="lesson_retell_placeholder"
+            placeholder="Напишите краткий пересказ урока по-немецки..."
+          ></textarea>
+
+          <div class="card-actions">
+            <button id="saveNotesBtn" class="btn btn-secondary" data-i18n="lesson_save_notes">
+              Сохранить заметки
+            </button>
+            <button id="checkKeywordsBtn" class="btn" data-i18n="lesson_check_keywords">
+              Проверить ключевые слова
+            </button>
           </div>
         </section>
 
-        <section class="lesson-panel">
-          <h2 data-i18n="lesson_record_title">Запись голоса</h2>
-          <p data-i18n="lesson_record_text">Запишите свой ответ, затем прослушайте его или сравните с оригиналом.</p>
-          <div class="player-controls">
-            <button class="btn btn-primary" id="recordBtn">⏺ <span data-i18n="record_start">Начать запись</span></button>
-            <button class="btn btn-secondary" id="stopRecordBtn" disabled>■ <span data-i18n="record_stop">Остановить</span></button>
-          </div>
-          <p id="recordStatus" class="status-line"></p>
-          <div id="recordingsList" class="recordings-list"></div>
-        </section>
+        <section class="lesson-grid">
+          <div class="card">
+            <h2 data-i18n="lesson_record_title">Запись голоса</h2>
+            <p data-i18n="lesson_record_text">
+              Запишите свой ответ, затем прослушайте его или сравните с оригиналом.
+            </p>
 
-        <section class="lesson-panel">
-          <h2 data-i18n="lesson_stt_title">Speech-to-Text</h2>
-          <p data-i18n="lesson_stt_text">Если браузер поддерживает распознавание речи, можно продиктовать ответ и получить текст.</p>
-          <div class="player-controls">
-            <button class="btn btn-primary" id="sttStartBtn">🎙 <span data-i18n="stt_start">Старт STT</span></button>
-            <button class="btn btn-secondary" id="sttStopBtn" disabled>■ <span data-i18n="stt_stop">Стоп STT</span></button>
+            <div class="card-actions">
+              <button id="recordStartBtn" class="btn" data-i18n="record_start">Начать запись</button>
+              <button id="recordStopBtn" class="btn btn-secondary" data-i18n="record_stop">Остановить</button>
+              <button id="playRecordingBtn" class="btn btn-secondary">▶ Play recording</button>
+              <button id="deleteRecordingBtn" class="btn btn-secondary">Delete recording</button>
+            </div>
+
+            <div id="recordingStatus" class="player-status">Запись отсутствует</div>
+            <audio id="recordingAudio" controls class="audio-player"></audio>
           </div>
-          <p id="sttStatus" class="status-line"></p>
-          <textarea id="sttOutput" rows="5" data-i18n-placeholder="lesson_stt_placeholder"></textarea>
+
+          <div class="card">
+            <h2 data-i18n="lesson_stt_title">Speech-to-Text</h2>
+            <p data-i18n="lesson_stt_text">
+              Если браузер поддерживает распознавание речи, можно продиктовать ответ и получить текст.
+            </p>
+
+            <div class="card-actions">
+              <button id="sttStartBtn" class="btn" data-i18n="stt_start">Старт STT</button>
+              <button id="sttStopBtn" class="btn btn-secondary" data-i18n="stt_stop">Стоп STT</button>
+            </div>
+
+            <textarea
+              id="sttOutput"
+              rows="6"
+              class="text-input"
+              data-i18n-placeholder="lesson_stt_placeholder"
+              placeholder="Здесь появится распознанный текст..."
+            ></textarea>
+          </div>
         </section>
-      </article>
+      </section>
     </div>
   </main>
 
