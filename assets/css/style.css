@@ -406,3 +406,24 @@ select{
     align-items:flex-start;
   }
 }
+.vocab-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed rgba(29, 26, 23, 0.12);
+}
+
+.vocab-de {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.vocab-separator {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.vocab-ru {
+  color: var(--muted);
+}

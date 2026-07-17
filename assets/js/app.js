@@ -1,142 +1,102 @@
 // assets/js/app.js
-const APP_STATE = {
-  lang: localStorage.getItem('da_lang') || 'ru'
+
+const DEFAULT_LANG = localStorage.getItem('da_lang') || 'ru';
+
+const LANG_FILES = {
+  ru: 'data/ui.ru.json',
+  uk: 'data/ui.uk.json',
+  en: 'data/ui.en.json',
+  es: 'data/ui.es.json'
 };
 
-const UI_TRANSLATIONS = {
-  ru: {
-    nav_home: 'Главная',
-    nav_levels: 'Уровни',
-    nav_lesson: 'Урок',
-    nav_feedback: 'Отзывы',
-    nav_reviews: 'Отзывы пользователей',
-    nav_about: 'О проекте',
-    nav_contact: 'Контакты',
-    home_eyebrow: 'Открытый доступ · B1/B2 · client-side',
-    home_title: 'Немецкий, который удобно слушать, повторять и говорить.',
-    home_lead: 'Короткие уроки, фразовый плеер, запись голоса, мультиязычный интерфейс и отзывы пользователей.',
-    home_cta_levels: 'Перейти к урокам',
-    home_cta_feedback: 'Оставить отзыв',
-    home_card_title: 'Что есть на сайте',
-    home_feature_1: 'Уроки B1 и B2 с аудированием',
-    home_feature_2: 'Плеер по фразам с паузой и повтором',
-    home_feature_3: 'Запись голоса и Speech-to-Text',
-    home_feature_4: 'Мультиязычный интерфейс',
-    home_feature_5: 'Отзывы и оценки пользователей',
-    home_section_title: 'Как устроено обучение',
-    home_section_text: 'Сайт построен так, чтобы вы могли быстро открыть урок, прослушать фразы, повторить их вслух и сохранить прогресс.',
-    home_step_1_title: '1. Слушайте',
-    home_step_1_text: 'Фразовый SpeechSynthesis-плеер помогает воспринимать немецкую речь небольшими сегментами.',
-    home_step_2_title: '2. Повторяйте',
-    home_step_2_text: 'Shadowing mode даёт паузу после каждой фразы, чтобы вы могли повторить услышанное.',
-    home_step_3_title: '3. Говорите',
-    home_step_3_text: 'Запишите свой ответ, проверьте распознавание речи и сравните себя с оригиналом.',
-    home_levels_title: 'Основной фокус — B1 и B2',
-    home_levels_text: 'A1 и A2 можно оставить как короткие разделы, а основное внимание уделить практичным урокам среднего уровня.',
-    home_b1_title: 'Короткие жизненные темы',
-    home_b1_text: 'Работа, жильё, здоровье, поездки, покупки, встречи.',
-    home_b2_title: 'Более сложные тексты',
-    home_b2_text: 'Мнения, аргументы, планы, обсуждения и пересказ.',
-    levels_title: 'Каталог уровней',
-    levels_text: 'Основной фокус на B1 и B2. A1 и A2 можно оставить как краткие разделы.',
-    levels_b1_title: 'B1',
-    levels_b2_title: 'B2',
-    levels_other_title: 'A1 / A2',
-    levels_other_text: 'Эти уровни можно добавить позже как короткие вводные разделы.',
-    lesson_sidebar_title: 'Уроки',
-    lesson_mark_done: 'Отметить как пройдено',
-    lesson_player_title: 'Аудирование и повторение',
-    player_play: 'Играть',
-    player_pause: 'Пауза',
-    player_prev: 'Назад',
-    player_next: 'Вперёд',
-    player_slow: 'Медленно',
-    player_shadow: 'Shadowing',
-    lesson_vocab_title: 'Словарь',
-    lesson_questions_title: 'Вопросы',
-    lesson_retell_title: 'Пересказ и устная речь',
-    lesson_retell_placeholder: 'Напишите краткий пересказ урока по-немецки...',
-    lesson_save_notes: 'Сохранить заметки',
-    lesson_check_keywords: 'Проверить ключевые слова',
-    lesson_record_title: 'Запись голоса',
-    lesson_record_text: 'Запишите свой ответ, затем прослушайте его или сравните с оригиналом.',
-    record_start: 'Начать запись',
-    record_stop: 'Остановить',
-    lesson_stt_title: 'Speech-to-Text',
-    lesson_stt_text: 'Если браузер поддерживает распознавание речи, можно продиктовать ответ и получить текст.',
-    stt_start: 'Старт STT',
-    stt_stop: 'Стоп STT',
-    lesson_stt_placeholder: 'Здесь появится распознанный текст...',
-    feedback_title: 'Оставить отзыв',
-    feedback_text: 'Оцените сайт и оставьте комментарий. Отзыв можно отправить на email и сохранить локально.',
-    feedback_name: 'Имя или псевдоним',
-    feedback_language: 'Язык интерфейса',
-    feedback_rating: 'Оценка',
-    feedback_comment: 'Комментарий',
-    feedback_consent: 'Разрешаю публикацию отзыва на сайте после модерации',
-    feedback_send: 'Отправить на email',
-    feedback_save_draft: 'Сохранить черновик',
-    reviews_title: 'Отзывы пользователей',
-    reviews_text: 'Здесь показываются только одобренные отзывы из JSON.',
-    about_title: 'О проекте',
-    about_text: 'Deutsch Atelier — открытый сайт для практики немецкого B1/B2.',
-    about_mission_title: 'Миссия',
-    about_mission_text: 'Сделать короткие уроки, аудирование и устную практику удобными и доступными без подписок.',
-    about_method_title: 'Метод',
-    about_method_1: 'Короткие тексты B1/B2',
-    about_method_2: 'Фразовый плеер',
-    about_method_3: 'Shadowing и пересказ',
-    about_method_4: 'Запись голоса и STT',
-    contact_title: 'Контакты',
-    contact_text: 'Для связи можно использовать отдельную проектную почту.',
-    contact_email_title: 'Email проекта',
-    contact_email_note: 'Позже этот адрес можно заменить на отдельную доменную почту.',
-    footer_text: 'Deutsch Atelier · открытый сайт для изучения немецкого.'
-  },
-  uk: {},
-  en: {},
-  es: {}
-};
+let currentTranslations = {};
 
-function applyTranslations(lang) {
-  const dict = UI_TRANSLATIONS[lang] || UI_TRANSLATIONS.ru;
-  document.documentElement.lang = lang === 'ru' ? 'ru' : lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (dict[key]) el.textContent = dict[key];
+async function loadTranslations(lang) {
+  const file = LANG_FILES[lang] || LANG_FILES.ru;
+
+  try {
+    const response = await fetch(file);
+    if (!response.ok) {
+      throw new Error(`Failed to load translation file: ${file}`);
+    }
+
+    currentTranslations = await response.json();
+    return currentTranslations;
+  } catch (error) {
+    console.error('Translation load error:', error);
+
+    if (lang !== 'ru') {
+      return loadTranslations('ru');
+    }
+
+    currentTranslations = {};
+    return currentTranslations;
+  }
+}
+
+function applyTranslations(translations) {
+  document.documentElement.lang = localStorage.getItem('da_lang') || 'ru';
+
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.dataset.i18n;
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
   });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.dataset.i18nPlaceholder;
-    if (dict[key]) el.placeholder = dict[key];
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.dataset.i18nPlaceholder;
+    if (translations[key]) {
+      element.placeholder = translations[key];
+    }
   });
+
   const switcher = document.getElementById('languageSwitcher');
-  if (switcher) switcher.value = lang;
+  if (switcher) {
+    switcher.value = localStorage.getItem('da_lang') || 'ru';
+  }
+}
+
+async function setLanguage(lang) {
+  localStorage.setItem('da_lang', lang);
+  const translations = await loadTranslations(lang);
+  applyTranslations(translations);
 }
 
 function initLanguageSwitcher() {
   const switcher = document.getElementById('languageSwitcher');
   if (!switcher) return;
-  switcher.value = APP_STATE.lang;
-  switcher.addEventListener('change', () => {
-    APP_STATE.lang = switcher.value;
-    localStorage.setItem('da_lang', APP_STATE.lang);
-    applyTranslations(APP_STATE.lang);
+
+  switcher.value = DEFAULT_LANG;
+
+  switcher.addEventListener('change', async () => {
+    await setLanguage(switcher.value);
   });
 }
 
 function initReveal() {
   const items = document.querySelectorAll('.reveal');
   if (!items.length) return;
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
   }, { threshold: 0.14 });
+
   items.forEach(item => observer.observe(item));
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  applyTranslations(APP_STATE.lang);
+async function initApp() {
+  const lang = localStorage.getItem('da_lang') || 'ru';
+  const translations = await loadTranslations(lang);
+
+  applyTranslations(translations);
   initLanguageSwitcher();
   initReveal();
-});
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
+

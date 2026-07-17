@@ -1,127 +1,223 @@
 // assets/js/lesson.js
-const LESSONS = [
-  {
-    id: 'b1-01',
-    level: 'B1',
-    topic: 'Beruf',
-    title: 'Работа и баланс',
-    description: 'Короткий урок о новой работе, планировании дня и балансе между делами и личной жизнью.',
-    sentences: [
-      'Seit drei Monaten arbeite ich in einer neuen Firma.',
-      'Am Anfang war alles ziemlich stressig.',
-      'Inzwischen fühle ich mich sicherer.',
-      'Jetzt plane ich meinen Tag realistischer.',
-      'So habe ich am Abend mehr Zeit für Sport und Freunde.'
-    ],
-    vocabulary: [
-      { de: 'die Firma', ru: 'компания' },
-      { de: 'ziemlich stressig', ru: ' - довольно напряжённо' },
-      { de: 'sich sicherer fühlen', ru: ' - чувствовать себя увереннее' },
-      { de: 'realistischer planen', ru: ' - планировать реалистичнее' }
-    ],
-    questions: [
-      'Warum war der Anfang schwierig?',
-      'Warum fühlt sich die Person jetzt sicherer?',
-      'Was hat sich am Tagesablauf verändert?'
-    ]
-  },
-  {
-    id: 'b1-02',
-    level: 'B1',
-    topic: 'Wohnen',
-    title: 'Поиск квартиры',
-    description: 'Урок о поиске квартиры, осмотре и выборе между ценой и расположением.',
-    sentences: [
-      'Meine Schwester sucht seit Wochen eine Wohnung in der Innenstadt.',
-      'Viele Angebote sind zu teuer oder zu klein.',
-      'Letzte Woche hat sie eine helle Zweizimmerwohnung besichtigt.',
-      'Die Lage war sehr gut, aber die Miete war höher als geplant.',
-      'Jetzt überlegt sie, ob sie lieber etwas außerhalb wohnen soll.'
-    ],
-    vocabulary: [
-      { de: 'die Wohnung', ru: ' - квартира' },
-      { de: 'besichtigen', ru: ' - осматривать' },
-      { de: 'die Lage', ru: ' - расположение' },
-      { de: 'die Miete', ru: ' - арендная плата' }
-    ],
-    questions: [
-      'Was sucht die Schwester?',
-      'Was war gut an der Wohnung?',
-      'Warum hat sie sich noch nicht entschieden?'
-    ]
-  },
-  {
-    id: 'b2-01',
-    level: 'B2',
-    topic: 'Meinung',
-    title: 'Мнение о технологиях',
-    description: 'Более сложный текст о преимуществах и недостатках цифровых привычек.',
-    sentences: [
-      'Digitale Geräte erleichtern unseren Alltag, aber sie können auch ablenken.',
-      'Viele Menschen verbringen zu viel Zeit am Bildschirm.',
-      'Trotzdem sind Online-Tools im Beruf und im Studium sehr nützlich.',
-      'Entscheidend ist, dass man bewusst mit Technik umgeht.',
-      'Nur so bleibt sie ein hilfreiches Werkzeug.'
-    ],
-    vocabulary: [
-      { de: 'ablenken', ru: ' - отвлекать' },
-      { de: 'nützlich', ru: ' - полезный' },
-      { de: 'bewusst', ru: ' - осознанно' },
-      { de: 'das Werkzeug', ru: ' - инструмент' }
-    ],
-    questions: [
-      'Welche Vorteile haben digitale Geräte?',
-      'Was ist das Problem?',
-      'Welche Haltung wird empfohlen?'
-    ]
-  }
-];
 
-function getLessonId() {
+window.lessonState = {
+  lesson: null,
+  currentSentenceIndex: 0,
+  slowMode: false,
+  shadowMode: false
+};
+
+async function loadLessons() {
+  try {
+    const response = await fetch('data/lessons.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load lessons.json: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error loading lessons:', error);
+    return [];
+  }
+}
+
+function getLessonIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get('id') || 'b1-01';
 }
 
-function renderLessonNav() {
+function renderLessonNav(lessons) {
   const nav = document.getElementById('lessonNav');
   if (!nav) return;
-  nav.innerHTML = LESSONS.map(lesson => `
-    <a href="lesson.html?id=${lesson.id}">${lesson.level} · ${lesson.title}</a>
+
+  nav.innerHTML = lessons.map(lesson => `
+    <a href="lesson.html?id=${lesson.id}" class="lesson-nav-link">
+      <strong>${lesson.level}</strong> · ${lesson.title}
+    </a>
   `).join('');
 }
 
 function renderLesson(lesson) {
-  document.getElementById('lessonMeta').textContent = `${lesson.level} · ${lesson.topic}`;
-  document.getElementById('lessonTitle').textContent = lesson.title;
-  document.getElementById('lessonDescription').textContent = lesson.description;
+  if (!lesson) return;
 
+  window.lessonState.lesson = lesson;
+  window.lessonState.currentSentenceIndex = 0;
+  window.lessonState.slowMode = false;
+  window.lessonState.shadowMode = false;
+
+  const lessonMeta = document.getElementById('lessonMeta');
+  const lessonTitle = document.getElementById('lessonTitle');
+  const lessonDescription = document.getElementById('lessonDescription');
   const sentenceStrip = document.getElementById('sentenceStrip');
-  sentenceStrip.innerHTML = lesson.sentences.map((sentence, index) => `
-    <div class="sentence" data-index="${index}">${sentence}</div>
-  `).join('');
+  const vocabList = document.getElementById('vocabList');
+  const questionList = document.getElementById('questionList');
+  const progressBar = document.getElementById('progressBar');
+  const segmentInfo = document.getElementById('segmentInfo');
+  const playerStatus = document.getElementById('playerStatus');
 
-  document.getElementById('vocabList').innerHTML = lesson.vocabulary.map(item => `
-    <li><span>${item.de}</span><span>${item.ru}</span></li>
-  `).join('');
+  if (lessonMeta) lessonMeta.textContent = `${lesson.level} · ${lesson.topic}`;
+  if (lessonTitle) lessonTitle.textContent = lesson.title;
+  if (lessonDescription) lessonDescription.textContent = lesson.description;
 
-  document.getElementById('questionList').innerHTML = lesson.questions.map(q => `
-    <div class="question-item">${q}</div>
-  `).join('');
+  if (sentenceStrip) {
+    sentenceStrip.innerHTML = lesson.sentences.map((sentence, index) => `
+      <div class="sentence ${index === 0 ? 'active' : ''}" data-index="${index}">
+        ${sentence}
+      </div>
+    `).join('');
+  }
 
-  window.currentLesson = lesson;
-  window.currentSentenceIndex = 0;
-  window.lessonProgress = {
-    lessonId: lesson.id,
-    currentIndex: 0,
-    slowMode: false,
-    shadowMode: false
-  };
+  if (vocabList) {
+    vocabList.innerHTML = lesson.vocabulary.map(item => `
+      <li class="vocab-item">
+        <span class="vocab-de">${item.de}</span>
+        <span class="vocab-separator">—</span>
+        <span class="vocab-ru">${item.ru}</span>
+      </li>
+    `).join('');
+  }
 
-  if (window.updatePlayerUI) window.updatePlayerUI();
+  if (questionList) {
+    questionList.innerHTML = lesson.questions.map(question => `
+      <div class="question-item">${question}</div>
+    `).join('');
+  }
+
+  if (progressBar) progressBar.style.width = '0%';
+  if (segmentInfo) segmentInfo.textContent = `Фраза 1 / ${lesson.sentences.length}`;
+  if (playerStatus) playerStatus.textContent = 'Готов к воспроизведению';
+
+  saveLessonProgress();
+  updateSentenceHighlight();
+
+  if (typeof window.updatePlayerUI === 'function') {
+    window.updatePlayerUI();
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLessonNav();
-  const lesson = LESSONS.find(item => item.id === getLessonId()) || LESSONS[0];
+function updateSentenceHighlight() {
+  const state = window.lessonState;
+  if (!state || !state.lesson) return;
+
+  const sentences = document.querySelectorAll('.sentence');
+  sentences.forEach((el, index) => {
+    el.classList.toggle('active', index === state.currentSentenceIndex);
+  });
+
+  const progressBar = document.getElementById('progressBar');
+  const segmentInfo = document.getElementById('segmentInfo');
+
+  const total = state.lesson.sentences.length;
+  const progress = (state.currentSentenceIndex / total) * 100;
+
+  if (progressBar) progressBar.style.width = `${progress}%`;
+  if (segmentInfo) {
+    segmentInfo.textContent = `Фраза ${Math.min(state.currentSentenceIndex + 1, total)} / ${total}`;
+  }
+}
+
+function saveLessonProgress() {
+  const state = window.lessonState;
+  if (!state || !state.lesson) return;
+
+  const progress = {
+    lessonId: state.lesson.id,
+    currentSentenceIndex: state.currentSentenceIndex,
+    savedAt: new Date().toISOString()
+  };
+
+  localStorage.setItem(`da_progress_${state.lesson.id}`, JSON.stringify(progress));
+}
+
+function loadLessonProgress(lessonId) {
+  try {
+    const saved = localStorage.getItem(`da_progress_${lessonId}`);
+    if (!saved) return null;
+    return JSON.parse(saved);
+  } catch (error) {
+    console.error('Error loading progress:', error);
+    return null;
+  }
+}
+
+function restoreLessonProgress(lesson) {
+  const saved = loadLessonProgress(lesson.id);
+  if (!saved) return;
+
+  if (typeof saved.currentSentenceIndex === 'number') {
+    window.lessonState.currentSentenceIndex = Math.min(
+      saved.currentSentenceIndex,
+      lesson.sentences.length - 1
+    );
+    updateSentenceHighlight();
+  }
+}
+
+function bindSentenceClicks() {
+  document.addEventListener('click', (event) => {
+    const sentenceEl = event.target.closest('.sentence');
+    if (!sentenceEl) return;
+
+    const state = window.lessonState;
+    if (!state || !state.lesson) return;
+
+    const index = Number(sentenceEl.dataset.index);
+    if (Number.isNaN(index)) return;
+
+    state.currentSentenceIndex = index;
+    updateSentenceHighlight();
+
+    if (typeof window.stopSpeech === 'function') {
+      window.stopSpeech();
+    }
+
+    const playerStatus = document.getElementById('playerStatus');
+    if (playerStatus) {
+      playerStatus.textContent = `Выбрана фраза ${index + 1}`;
+    }
+
+    saveLessonProgress();
+  });
+}
+
+function bindMarkDoneButton() {
+  const markDoneBtn = document.getElementById('markDoneBtn');
+  const state = window.lessonState;
+  if (!markDoneBtn || !state || !state.lesson) return;
+
+  const doneKey = `da_done_${state.lesson.id}`;
+  const saved = localStorage.getItem(doneKey);
+
+  if (saved === '1') {
+    markDoneBtn.textContent = 'Пройдено';
+  }
+
+  markDoneBtn.addEventListener('click', () => {
+    localStorage.setItem(doneKey, '1');
+    markDoneBtn.textContent = 'Пройдено';
+  });
+}
+
+async function initLessonPage() {
+  const lessons = await loadLessons();
+  if (!lessons.length) {
+    console.error('No lessons found');
+    return;
+  }
+
+  renderLessonNav(lessons);
+
+  const lessonId = getLessonIdFromUrl();
+  const lesson = lessons.find(item => item.id === lessonId) || lessons[0];
+
   renderLesson(lesson);
-});
+  restoreLessonProgress(lesson);
+  bindMarkDoneButton();
+  bindSentenceClicks();
+
+  if (typeof window.updatePlayerUI === 'function') {
+    window.updatePlayerUI();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initLessonPage);
+
