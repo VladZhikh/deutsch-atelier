@@ -1,45 +1,87 @@
-// assets/js/progress.js
+
 document.addEventListener('DOMContentLoaded', () => {
   const markDoneBtn = document.getElementById('markDoneBtn');
-  if (!markDoneBtn || !window.currentLesson) return;
+        
+  
+  markDoneBtn.addEventListener('click', () => {
+    console.log('Кнопка бала нажата')
+    //ocalStorage.setItem(key, '1');
+    markDoneBtn.textContent = 'Пройлено';
+  });
+});
 
-  const key = `da_done_${window.currentLesson.id}`;
-  const saved = localStorage.getItem(key);
 
-  if (saved === '1') {
-    markDoneBtn.textContent = 'Пройдено';
+const textarea = document.getElementById('retellText');
+const button = document.getElementById('checkKeywordsBtn'); 
+ 
+button.addEventListener('click', () => {
+  // Получаем актуальный текст из textarea
+  const text = textarea.value;
+  
+  // Выводим результат в консоль браузера
+  console.log('Текст из поля:', text);
+});
+
+function normalizeText(text) {
+  return (text || '')
+    .toLowerCase()
+    .replace(/[.,!?;:()"«»„“'’\-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function getLessonKeywords() {
+  const lesson = window.lessonState && window.lessonState.lesson;
+  if (!lesson) return [];
+
+  // Если в уроке есть отдельный массив keywords
+  if (Array.isArray(lesson.keywords) && lesson.keywords.length > 0) {
+    return lesson.keywords;
   }
 
-  markDoneBtn.addEventListener('click', () => {
-    localStorage.setItem(key, '1');
-    markDoneBtn.textContent = 'Пройдено';
+  // Если keywords нет, берём немецкие слова из vocabulary
+  if (Array.isArray(lesson.vocabulary)) {
+    return lesson.vocabulary
+      .map(item => {
+        if (typeof item === 'string') return item;
+        return item.de || item.word || '';
+      })
+      .filter(Boolean);
+  }
+
+  return [];
+}
+
+function checkKeywords() {
+  const textArea = document.getElementById('retellText');
+  const resultBox = document.getElementById('keywordResult');
+
+  //if (!textArea || !resultBox) return;
+
+  const text = normalizeText(textArea.value);
+  const keywords = getLessonKeywords().map(normalizeText).filter(Boolean);
+
+  if (keywords.length === 0) {
+    resultBox.textContent = 'Для этого урока не заданы ключевые слова.';
+    return;
+ }
+
+  const found = [];
+  const missing = [];
+
+  keywords.forEach(keyword => {
+    if (text.includes(keyword)) {
+      found.push(keyword);
+    } else {
+      missing.push(keyword);
+    }
   });
 
-  const retellInput = document.getElementById('retellInput');
-  const saveRetellBtn = document.getElementById('saveRetellBtn');
-  const checkRetellBtn = document.getElementById('checkRetellBtn');
-  const retellFeedback = document.getElementById('retellFeedback');
+  const percent = Math.round((found.length / keywords.length) * 100);
 
-  if (retellInput) {
-    const savedText = localStorage.getItem(`da_retell_${window.currentLesson.id}`) || '';
-    retellInput.value = savedText;
+  resultBox.innerHTML = `Key-word match: ${percent}%`;
+}
+const checkBtn = document.getElementById('checkKeywordsBtn');
+  if (checkBtn) {
+    checkBtn.addEventListener('click', checkKeywords);
   }
-
-  if (saveRetellBtn && retellInput) {
-    saveRetellBtn.addEventListener('click', () => {
-      localStorage.setItem(`da_retell_${window.currentLesson.id}`, retellInput.value);
-      retellFeedback.textContent = 'Заметки сохранены.';
-    });
-  }
-
-  if (checkRetellBtn && retellInput) {
-    checkRetellBtn.addEventListener('click', () => {
-      const source = window.currentLesson.sentences.join(' ').toLowerCase();
-      const user = retellInput.value.toLowerCase();
-      const words = [...new Set(source.split(' ').filter(w => w.length > 4))];
-      const matched = words.filter(word => user.includes(word));
-      const percent = Math.round((matched.length / words.length) * 100);
-      retellFeedback.textContent = `Совпадение по ключевым словам: ${percent}%`;
-    });
-  }
-});
