@@ -28,7 +28,7 @@ function renderLessonCards(containerId, lessons) {
   container.innerHTML = lessons.map(lesson => `
     <a class="lesson-card" href="lesson.html?id=${lesson.id}">
       <span class="level-tag">${lesson.topic || lesson.level}</span>
-      <h3>${lesson.title}</h3>
+      <h3 data-i18n="lesson_title">${lesson.title}</h3>
       <p>${lesson.description || lesson.id}</p>
     </a>
   `).join('');

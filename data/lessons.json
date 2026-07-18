@@ -1,22 +1,249 @@
 
 [
   {
+  "id": "a1-01",
+  "level": "A1",
+  "topic": "Sich vorstellen",
+  "title": "Hallo, ich bin Anna",
+  "description": "Eine einfache Lektion über Begrüßung, Namen und Herkunft.",
+  "sentences": [
+    "Hallo, ich heiße Anna.",
+    "Ich komme aus Polen.",
+    "Ich wohne jetzt in Berlin.",
+    "Ich lerne Deutsch.",
+    "Meine Hobbys sind Lesen und Musik."
+  ],
+  "vocabulary": [
+    { "de": "heißen", "ru": "зваться" },
+    { "de": "kommen aus", "ru": "быть родом из" },
+    { "de": "wohnen", "ru": "жить" },
+    { "de": "lernen", "ru": "учить" },
+    { "de": "das Hobby", "ru": "хобби" }
+  ],
+  "questions": [
+    "Wie heißt die Person?",
+    "Woher kommt sie?",
+    "Wo wohnt sie?",
+    "Was lernt sie?",
+    "Was sind ihre Hobbys?"
+  ]
+  },
+     {
+    "id": "a1-01",
+    "level": "A1",
+    "topic": "Sich vorstellen",
+    "title": "Hallo, wer bist du?",
+    "description": "In dieser Lektion lernen Sie, wie man sich vorstellt und einfache Fragen zur Person beantwortet.",
+    "sentences": [
+      "Guten Tag, mein Name ist Max Schmidt.",
+      "Ich komme aus Deutschland und wohne in Berlin.",
+      "Ich bin zweiunddreißig Jahre alt.",
+      "Ich arbeite als Ingenieur bei einer großen Firma.",
+      "In meiner Freizeit spiele ich gerne Fußball.",
+      "Wie heißt du und woher kommst du?"
+    ],
+    "vocabulary": [
+      { "de": "heißen", "ru": "называться, звать" },
+      { "de": "wohnen", "ru": "жить, проживать" },
+      { "de": "alt", "ru": "возраст" },
+      { "de": "berufstätig", "ru": "работающий" },
+      { "de": "die Freizeit", "ru": "свободное время" }
+    ],
+    "questions": [
+      "Wie heißt die Person?",
+      "Woher kommt Max?",
+      "Was ist sein Beruf?",
+      "Was macht er in der Freizeit?"
+    ]
+  },
+  {
+    "id": "a1-02",
+    "level": "A1",
+    "topic": "Essen und Trinken",
+    "title": "Im Supermarkt einkaufen",
+    "description": "Lernen Sie wichtige Wörter über Lebensmittel und wie man im Supermarkt einkauft.",
+    "sentences": [
+      "Ich brauche heute Brot, Milch und Eier.",
+      "Der Apfelsaft ist im Angebot und kostet nur einen Euro.",
+      "Wo finde ich frisches Obst und Gemüse?",
+      "Ich möchte bitte zwei Kilo Kartoffeln kaufen.",
+      "Haben Sie auch dunkle Schokolade?",
+      "Ich bezahle an der Kasse mit der Karte."
+    ],
+    "vocabulary": [
+      { "de": "einkaufen", "ru": "делать покупки" },
+      { "de": "das Gemüse", "ru": "овощи" },
+      { "de": "teuer", "ru": "дорогой" },
+      { "de": "billig", "ru": "дешёвый" },
+      { "de": "die Flasche", "ru": "бутылка" }
+    ],
+    "questions": [
+      "Was möchte die Person kaufen?",
+      "Was kostet der Apfelsaft?",
+      "Wie viel Kilo Kartoffeln braucht sie?",
+      "Wie bezahlt die Person?"
+    ]
+  },
+  {
+    "id": "a1-03",
+    "level": "A1",
+    "topic": "Tagesablauf",
+    "title": "Mein Tag",
+    "description": "Beschreiben Sie Ihren Alltag und sprechen Sie über Uhrzeiten.",
+    "sentences": [
+      "Ich stehe jeden Morgen um sieben Uhr auf.",
+      "Um acht Uhr trinke ich einen Kaffee und frühstücke.",
+      "Von neun bis siebzehn Uhr arbeite ich im Büro.",
+      "Am Nachmittag gehe ich im Park spazieren.",
+      "Um halb acht koche ich das Abendessen.",
+      "Ich gehe meistens um elf Uhr schlafen."
+    ],
+    "vocabulary": [
+      { "de": "aufstehen", "ru": "вставать" },
+      { "de": "frühstücken", "ru": "завтракать" },
+      { "de": "die Uhrzeit", "ru": "время" },
+      { "de": "arbeiten", "ru": "работать" },
+      { "de": "schlafen", "ru": "спать" }
+    ],
+    "questions": [
+      "Wann steht die Person auf?",
+      "Was macht sie um acht Uhr?",
+      "Wo arbeitet sie?",
+      "Wann geht sie schlafen?"
+    ]
+  },
+  {
+    "id": "a2-01",
+    "level": "A2",
+    "topic": "Wohnen",
+    "title": "Meine neue Wohnung",
+    "description": "In dieser Lektion beschreiben wir eine Wohnung und die Möbelstücke.",
+    "sentences": [
+      "Ich bin letzte Woche in eine neue Wohnung eingezogen.",
+      "Die Wohnung hat drei Zimmer, eine Küche und einen Balkon.",
+      "Das Wohnzimmer ist sehr hell und modern eingerichtet.",
+      "In der Küche steht ein neuer Kühlschrank und ein Esstisch.",
+      "Die Miete ist etwas teuer, aber die Lage ist perfekt.",
+      "Mein Schlafzimmer liegt ruhig zum Innenhof."
+    ],
+    "vocabulary": [
+      { "de": "einziehen", "ru": "въезжать в квартиру" },
+      { "de": "die Miete", "ru": "арендная плата" },
+      { "de": "hell", "ru": "светлый" },
+      { "de": "das Möbelstück", "ru": "предмет мебели" },
+      { "de": "der Balkon", "ru": "балкон" }
+    ],
+    "questions": [
+      "Wie viele Zimmer hat die Wohnung?",
+      "Was steht in der Küche?",
+      "Ist die Miete günstig oder teuer?",
+      "Wo liegt das Schlafzimmer?"
+    ]
+  },
+  {
+    "id": "a2-02",
+    "level": "A2",
+    "topic": "Stadt und Orientierung",
+    "title": "Wegbeschreibung in der Stadt",
+    "description": "Lernen Sie, wie man nach dem Weg fragt und den Weg erklärt.",
+    "sentences": [
+      "Entschuldigung, wie komme ich zum Bahnhof?",
+      "Gehen Sie geradeaus bis zur nächsten Kreuzung.",
+      "Biegen Sie dort links in die Hauptstraße ab.",
+      "Nach zweihundert Metern sehen Sie das Museum auf der rechten Seite.",
+      "Es ist einfacher, wenn Sie den Bus Nummer zehn nehmen.",
+      "Die Haltestelle ist direkt vor der Post."
+    ],
+    "vocabulary": [
+      { "de": "der Bahnhof", "ru": "вокзал" },
+      { "de": "geradeaus", "ru": "прямо" },
+      { "de": "abbiegen", "ru": "поворачивать" },
+      { "de": "die Kreuzung", "ru": "перекрёсток" },
+      { "de": "die Haltestelle", "ru": "остановка" }
+    ],
+    "questions": [
+      "Wohin möchte die Person gehen?",
+      "Soll sie links oder rechts abbiegen?",
+      "Was ist auf der rechten Seite zu sehen?",
+      "Welchen Bus kann man nehmen?"
+    ]
+  },
+  {
+    "id": "a2-03",
+    "level": "A2",
+    "topic": "Arbeit und Beruf",
+    "title": "Ein typischer Arbeitstag",
+    "description": "Sprechen Sie über Ihre Aufgaben im Job und Arbeitskollegen.",
+    "sentences": [
+      "Ich arbeite in einer Marketing-Agentur im Stadtzentrum.",
+      "Jeden Montag haben wir eine Besprechung mit dem Chef.",
+      "Ich muss viele E-Mails beantworten und Telefonate führen.",
+      "Meine Kollegen sind sehr freundlich und hilfsbereit.",
+      "Heute muss ich ein wichtiges Projekt abschließen.",
+      "In der Mittagspause gehen wir oft zusammen essen."
+    ],
+    "vocabulary": [
+      { "de": "die Besprechung", "ru": "совещание" },
+      { "de": "beantworten", "ru": "отвечать" },
+      { "de": "hilfsbereit", "ru": "готовый помочь" },
+      { "de": "das Projekt", "ru": "проект" },
+      { "de": "die Aufgabe", "ru": "задача, задание" }
+    ],
+    "questions": [
+      "Wo arbeitet die Person?",
+      "Was passiert jeden Montag?",
+      "Wie sind die Kollegen?",
+      "Was macht die Person in der Mittagspause?"
+    ]
+  },
+  {
+  "id": "a2-01",
+  "level": "A2",
+  "topic": "Arbeit und Alltag",
+  "title": "Mein Arbeitstag",
+  "description": "Eine kurze Lektion über den Arbeitsalltag, die Tagesplanung und die Balance zwischen Arbeit und Freizeit.",
+  "sentences": [
+    "Ich arbeite seit einem Jahr in einer kleinen Firma.",
+    "Jeden Morgen beginne ich um acht Uhr.",
+    "Zuerst beantworte ich E-Mails und plane meine Aufgaben für den Tag.",
+    "Manchmal ist es stressig, aber meistens gefällt mir meine Arbeit.",
+    "Nach der Arbeit gehe ich oft spazieren oder treffe Freunde.",
+    "Am Abend versuche ich, nicht mehr an die Arbeit zu denken."
+  ],
+  "vocabulary": [
+    { "de": "der Arbeitstag", "ru": "рабочий день" },
+    { "de": "die Aufgabe", "ru": "задача" },
+    { "de": "beantworten", "ru": "отвечать" },
+    { "de": "spazieren gehen", "ru": "гулять" },
+    { "de": "sich entspannen", "ru": "расслабляться" }
+  ],
+  "questions": [
+    "Wann beginnt die Person mit der Arbeit?",
+    "Was macht sie zuerst?",
+    "Was macht sie nach der Arbeit?",
+    "Wie fühlt sich die Person bei der Arbeit?",
+    "Warum ist der Abend wichtig?"
+  ]
+  },
+  {
     "id": "b1-01",
     "level": "B1",
-    "topic": "Beruf",
-    "title": "Работа и баланс",
-    "description": "Короткий урок о новой работе, планировании дня и балансе между делами и личной жизнью.",
+    "topic": "Arbeit und Alltag",
+    "title": "Arbeit und Ausgleich",
+    "description": "Eine kurze Lektion über einen neuen Job, die Tagesplanung und die Work-Life-Balance.",
     "sentences": [
       "Seit drei Monaten arbeite ich in einer neuen Firma.",
-      "Am Anfang war alles ziemlich stressig.",
+      "Am Anfang war alles ziemlich stressig, weil ich viele neue Aufgaben hatte und meine Kollegen noch nicht gut kannte.",
       "Inzwischen fühle ich mich sicherer.",
-      "Jetzt plane ich meinen Tag realistischer.",
+      "Besonders wichtig ist für mich, dass ich meine Arbeit besser organisieren kann.",
+      "Früher habe ich oft Überstunden gemacht, aber jetzt plane ich meinen Tag realistischer.",
       "So habe ich am Abend mehr Zeit für Sport und Freunde."
     ],
     "vocabulary": [
-      { "de": "die Firma", "ru": " компания" },
       { "de": "ziemlich stressig", "ru": " довольно напряжённо" },
+      { "de": "Inzwischen", "ru": " теперь, в настоящее время" },
       { "de": "sich sicherer fühlen", "ru": " чувствовать себя увереннее" },
+      { "de": "Überstunden machen", "ru" : "работать сверхурочно"},
       { "de": "realistischer planen", "ru": " планировать реалистичнее" }
     ],
     "questions": [

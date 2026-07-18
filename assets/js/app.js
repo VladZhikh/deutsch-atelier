@@ -1,6 +1,6 @@
 // assets/js/app.js
 
-const DEFAULT_LANG = localStorage.getItem('da_lang') || 'ru';
+const DEFAULT_LANG = localStorage.getItem('da_lang') || 'en';
 
 const LANG_FILES = {
   ru: 'data/ui.ru.json',
