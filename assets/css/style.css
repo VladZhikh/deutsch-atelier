@@ -558,3 +558,83 @@
     .player-card { animation-delay: 0.12s; }
     .card:nth-of-type(1) { animation-delay: 0.18s; }
     .card:nth-of-type(2) { animation-delay: 0.24s; }
+    .feedback-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.feedback-text {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.feedback-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.text-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(31, 26, 23, 0.12);
+  background: #fff;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #7a5cff;
+  box-shadow: 0 0 0 3px rgba(122, 92, 255, 0.12);
+}
+
+#feedbackStatus {
+  margin-top: 0.5rem;
+  min-height: 1.5rem;
+}
+.feedback-form .btn {
+  width: 100%;
+}
+.feedback-form .form-group input[type="text"],
+.feedback-form .form-group input[type="email"] {
+  max-width: 300px;
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 0.6rem;
+  border-radius: 12px;
+}
+
+
+.feedback-form .form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+}
+@media (max-width: 600px) {
+  .feedback-card {
+    padding: 1.25rem;
+  }
+
+  .text-input {
+    border-radius: 12px;
+  }
+  @media (max-width: 600px) {
+  .feedback-form .form-group input[type="text"],
+  .feedback-form .form-group input[type="email"] {
+    max-width: 100%;
+   }
+  }
+
+}
