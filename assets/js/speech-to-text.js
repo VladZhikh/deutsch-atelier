@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const recognition = new SpeechRecognition();
   recognition.lang = 'de-DE';
-  recognition.interimResults = true;
+  recognition.interimResults = false;
   recognition.continuous = true;
 
   recognition.onstart = () => {
@@ -26,13 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
     sttStopBtn.disabled = false;
   };
 
-  recognition.onresult = event => {
+  // Old variant
+recognition.onresult = event => {
     let transcript = '';
     for (let i = 0; i < event.results.length; i++) {
       transcript += event.results[i][0].transcript + ' ';
     }
     sttOutput.value = transcript.trim();
   };
+
+
 
   recognition.onerror = () => {
     sttStatus.textContent = 'Speech recognition error.';
