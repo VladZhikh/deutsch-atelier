@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deutsch Atelier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body data-page="home">
@@ -38,29 +39,58 @@
 
   <main>
     <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow" data-i18n="home_eyebrow">Открытый доступ · B1/B2 · client-side</p>
-        <h1 data-i18n="home_title">Немецкий, который удобно слушать, повторять и говорить.</h1>
-        <p class="lead" data-i18n="home_lead">
-          Короткие уроки, фразовый плеер, запись голоса, мультиязычный интерфейс и отзывы пользователей.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="levels.html" data-i18n="home_cta_levels">Перейти к урокам</a>
-          <a class="btn btn-secondary" href="feedback.html" data-i18n="home_cta_feedback">Оставить отзыв</a>
-        </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n="home_eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Открытый доступ · B1/B2 · client-side
+      </p>
+
+      <h1 data-i18n="home_title">Немецкий, который удобно слушать, повторять и говорить.</h1>
+
+      <p class="lead" data-i18n="home_lead">
+        Короткие уроки, фразовый плеер, запись голоса, мультиязычный интерфейс и отзывы пользователей.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="levels.html" data-i18n="home_cta_levels">Перейти к урокам</a>
+        <a class="btn btn-secondary" href="feedback.html" data-i18n="home_cta_feedback">Оставить отзыв</a>
+      </div>
+    </div>
+
+    <div class="visual-panel reveal" aria-hidden="true">
+      <div class="floating-sheet sheet-main">
+        <h3>Heute üben wir echtes Deutsch.</h3>
+        <div class="sheet-line"></div>
+        <div class="sheet-line mid"></div>
+        <div class="sheet-line short"></div>
+        <div class="sheet-line"></div>
+        <div class="sheet-line mid"></div>
       </div>
 
-      <div class="hero-card">
-        <h2 data-i18n="home_card_title">Что есть на сайте</h2>
-        <ul class="feature-list">
-          <li data-i18n="home_feature_1">Уроки B1 и B2 с аудированием</li>
-          <li data-i18n="home_feature_2">Плеер по фразам с паузой и повтором</li>
-          <li data-i18n="home_feature_3">Запись голоса и Speech-to-Text</li>
-          <li data-i18n="home_feature_4">Мультиязычный интерфейс</li>
-          <li data-i18n="home_feature_5">Отзывы и оценки пользователей</li>
-        </ul>
+      <div class="floating-sheet sheet-audio">
+        <div class="audio-ui">
+          <div class="play-orb">▶</div>
+          <div class="wave">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <div class="hero-card reveal">
+    <h2 data-i18n="home_card_title">Что есть на сайте</h2>
+    <ul class="feature-list">
+      <li data-i18n="home_feature_1">Уроки B1 и B2 с аудированием</li>
+      <li data-i18n="home_feature_2">Плеер по фразам с паузой и повтором</li>
+      <li data-i18n="home_feature_3">Запись голоса и Speech-to-Text</li>
+      <li data-i18n="home_feature_4">Мультиязычный интерфейс</li>
+      <li data-i18n="home_feature_5">Отзывы и оценки пользователей</li>
+    </ul>
+  </div>
+</section>
 
     <section class="container section">
       <div class="section-head">
