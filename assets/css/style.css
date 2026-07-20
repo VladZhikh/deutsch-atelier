@@ -325,15 +325,36 @@
       grid-template-columns: 1fr;
       gap: 1.8rem;
     }
+    
 
-  .hero-copy{
-      max-width: none;
+    .hero-copy,
+    .visual-panel,
+    .hero-card{
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 640px){
+    .hero-copy{
+      width: 100%;
+      max-width: 100%;
     }
 
     .hero h1{
-      max-width: 12ch;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      font-size: clamp(2.35rem, 10vw, 3.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
     }
-
+    .hero p.lead,
+    .eyebrow,
+    .hero-actions{
+      max-width: 100%;
+    }
+  }
     .visual-panel{
       min-height: 460px;
       max-width: 720px;
