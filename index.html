@@ -91,30 +91,182 @@
     </ul>
   </div>
 </section>
+<section class="container section learning-steps" aria-labelledby="learning-steps-title">
+  <div class="steps-top reveal">
+    <p class="steps-kicker">Пошаговая практика</p>
 
-    <section class="container section">
-      <div class="section-head">
-        <h2 data-i18n="home_section_title">Как устроено обучение</h2>
-        <p data-i18n="home_section_text">
-          Сайт построен так, чтобы вы могли быстро открыть урок, прослушать фразы, повторить их вслух и сохранить прогресс.
-        </p>
-      </div>
+    <div class="steps-head-inline">
+      <h2 id="learning-steps-title" data-i18n="home_section_title">Как устроено обучение</h2>
+      <p data-i18n="home_section_text">
+        Сайт построен так, чтобы вы могли быстро открыть урок, прослушать фразы, повторить их вслух и сохранить прогресс.
+      </p>
+    </div>
+  </div>
 
-      <div class="grid-3">
-        <article class="info-card">
-          <h3 data-i18n="home_step_1_title">1. Слушайте</h3>
-          <p data-i18n="home_step_1_text">Фразовый SpeechSynthesis-плеер помогает воспринимать немецкую речь небольшими сегментами.</p>
-        </article>
-        <article class="info-card">
-          <h3 data-i18n="home_step_2_title">2. Повторяйте</h3>
-          <p data-i18n="home_step_2_text">Shadowing mode даёт паузу после каждой фразы, чтобы вы могли повторить услышанное.</p>
-        </article>
-        <article class="info-card">
-          <h3 data-i18n="home_step_3_title">3. Говорите</h3>
-          <p data-i18n="home_step_3_text">Запишите свой ответ, проверьте распознавание речи и сравните себя с оригиналом.</p>
-        </article>
-      </div>
-    </section>
+  <div class="steps-row reveal" aria-label="Этапы обучения">
+    <div class="step-block">
+      <span class="step-index">Step 1</span>
+      <h3 data-i18n="home_step_1_title">Слушайте</h3>
+      <p data-i18n="home_step_1_text">
+        Фразовый SpeechSynthesis-плеер помогает воспринимать немецкую речь небольшими сегментами.
+      </p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-index">Step 2</span>
+      <h3 data-i18n="home_step_2_title">Повторяйте</h3>
+      <p data-i18n="home_step_2_text">
+        Shadowing mode даёт паузу после каждой фразы, чтобы вы могли повторить услышанное.
+      </p>
+    </div>
+
+    <div class="step-block">
+      <span class="step-index">Step 3</span>
+      <h3 data-i18n="home_step_3_title">Говорите</h3>
+      <p data-i18n="home_step_3_text">
+        Запишите свой ответ, проверьте распознавание речи и сравните себя с оригиналом.
+      </p>
+    </div>
+  </div>
+</section>
+<style>
+  .learning-steps{
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+}
+
+.steps-top{
+  margin-bottom: 2rem;
+}
+
+.steps-kicker{
+  margin: 0 0 .85rem;
+  font-size: .78rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.steps-head-inline{
+  display: grid;
+  grid-template-columns: minmax(260px, .95fr) minmax(320px, 1.2fr);
+  gap: 1.4rem 2.2rem;
+  align-items: end;
+}
+
+.steps-head-inline h2{
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: .98;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  max-width: 10ch;
+}
+
+.steps-head-inline p{
+  margin: 0;
+  max-width: 60ch;
+  color: #5a524b;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.steps-row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.step-block{
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.35rem 1.35rem 1.5rem;
+  border-top: 1px solid rgba(29, 26, 23, .16);
+  background: linear-gradient(180deg, rgba(255,255,255,.46), rgba(255,255,255,.18));
+  transition: transform .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.step-block::after{
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(156,79,46,.35), rgba(29,26,23,.08));
+  transform: scaleX(.22);
+  transform-origin: left;
+  transition: transform .28s ease;
+}
+
+.step-block:hover{
+  transform: translateY(-4px);
+  border-top-color: rgba(156,79,46,.42);
+  background: linear-gradient(180deg, rgba(255,255,255,.68), rgba(248,242,236,.42));
+}
+
+.step-block:hover::after{
+  transform: scaleX(1);
+}
+
+.step-index{
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: .82rem;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(156,79,46,.88);
+}
+
+.step-block h3{
+  margin: 0 0 .7rem;
+  font-size: 1.28rem;
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+.step-block p{
+  margin: 0;
+  color: #564e47;
+  line-height: 1.68;
+  max-width: 30ch;
+}
+
+@media (max-width: 920px){
+  .steps-head-inline{
+    grid-template-columns: 1fr;
+    gap: .8rem;
+  }
+
+  .steps-head-inline h2{
+    max-width: none;
+  }
+
+  .steps-head-inline p{
+    max-width: 100%;
+  }
+
+  .steps-row{
+    grid-template-columns: 1fr;
+  }
+
+  .step-block{
+    min-height: auto;
+    padding: 1.1rem 0 1.2rem;
+  }
+
+  .step-block p{
+    max-width: 100%;
+  }
+}
+
+</style>
+
 
     <section class="container section">
       <div class="section-head">
