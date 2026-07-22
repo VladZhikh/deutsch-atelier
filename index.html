@@ -267,28 +267,735 @@
 
 </style>
 
+<section class="container section levels-path levels-path--vivid" aria-labelledby="levels-path-title">
+  <h2 class="levels-motivation-text">
+    <i> - Schon eine einzige Lektion pro Tag führt zu Fortschritten im Deutschen.</i>
+  </h2>
 
-    <section class="container section">
-      <div class="section-head">
-        <h2 data-i18n="home_levels_title">Основной фокус — B1 и B2</h2>
-        <p data-i18n="home_levels_text">
-          A1 и A2 можно оставить как короткие разделы, а основное внимание уделить практичным урокам среднего уровня.
+  <div class="levels-top reveal">
+    <p class="levels-kicker">Маршрут обучения</p>
+
+    <div class="levels-intro">
+      <div class="levels-copy">
+        <h2 id="levels-path-title" data-i18n="home_levels_title">
+          Начните с одного текста — и доведите его до уверенной речи.
+        </h2>
+        <p class="levels-lead" data-i18n="home_levels_text">
+          Эти уроки можно использовать как мини-тренажёр на каждый день: 10–15 минут на аудирование, пересказ и повторение ключевых выражений.
+        </p>
+        <p class="levels-note">
+          Двигайтесь по уровням постепенно: от простых бытовых фраз к более длинным ответам, пересказу и свободной речи.
         </p>
       </div>
 
-      <div class="level-preview">
-        <a class="level-card" href="levels.html#b1">
-          <span class="level-tag">B1</span>
-          <h3 data-i18n="home_b1_title">Короткие жизненные темы</h3>
-          <p data-i18n="home_b1_text">Работа, жильё, здоровье, поездки, покупки, встречи.</p>
-        </a>
-        <a class="level-card" href="levels.html#b2">
-          <span class="level-tag">B2</span>
-          <h3 data-i18n="home_b2_title">Более сложные тексты</h3>
-          <p data-i18n="home_b2_text">Мнения, аргументы, планы, обсуждения и пересказ.</p>
-        </a>
-      </div>
-    </section>
+      <aside class="levels-visual" aria-label="Прогресс по уровням">
+        <div class="visual-shell">
+          <div class="visual-orb visual-orb--amber"></div>
+          <div class="visual-orb visual-orb--violet"></div>
+          <div class="visual-orb visual-orb--mint"></div>
+
+          <div class="visual-head">
+            <span class="visual-label">Прогресс</span>
+            <span class="visual-time">10–15 минут в день</span>
+          </div>
+
+          <div class="progress-rail" aria-hidden="true">
+            <span class="progress-fill"></span>
+          </div>
+
+          <div class="progress-stops">
+            <div class="progress-stop is-complete">
+              <span class="stop-dot"></span>
+              <span class="stop-level">A1</span>
+              <span class="stop-text">Старт</span>
+            </div>
+            <div class="progress-stop is-complete">
+              <span class="stop-dot"></span>
+              <span class="stop-level">A2</span>
+              <span class="stop-text">База</span>
+            </div>
+            <div class="progress-stop is-active">
+              <span class="stop-dot"></span>
+              <span class="stop-level">B1</span>
+              <span class="stop-text">Практика</span>
+            </div>
+            <div class="progress-stop">
+              <span class="stop-dot"></span>
+              <span class="stop-level">B2</span>
+              <span class="stop-text">Свобода</span>
+            </div>
+          </div>
+
+          <div class="visual-card">
+            <p class="visual-card-label">Фокус</p>
+            <h3>От коротких диалогов к уверенной речи</h3>
+            <p>
+              Слушайте, повторяйте и пересказывайте тексты, чтобы постепенно переходить от понимания к активной речи.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="levels-grid reveal" aria-label="Уровни обучения">
+    <a class="level-tile level-tile--a1" href="levels.html#a1">
+      <span class="level-badge">A1</span>
+      <h3>Простые фразы и базовые темы</h3>
+      <p>Знакомство, покупки, дорога, числа, короткие вопросы и повседневные ситуации.</p>
+    </a>
+
+    <a class="level-tile level-tile--a2" href="levels.html#a2">
+      <span class="level-badge">A2</span>
+      <h3>Больше уверенности в обычных разговорах</h3>
+      <p>Планы, встречи, поездки, ежедневные темы и более длинные ответы в диалоге.</p>
+    </a>
+
+    <a class="level-tile level-tile--b1" href="levels.html#b1">
+      <span class="level-badge">B1</span>
+      <h3 data-i18n="home_b1_title">Короткие жизненные темы</h3>
+      <p data-i18n="home_b1_text">Работа, жильё, здоровье, поездки, покупки, встречи.</p>
+    </a>
+
+    <a class="level-tile level-tile--b2" href="levels.html#b2">
+      <span class="level-badge">B2</span>
+      <h3 data-i18n="home_b2_title">Более сложные тексты</h3>
+      <p data-i18n="home_b2_text">Мнения, аргументы, планы, обсуждения и пересказ.</p>
+    </a>
+  </div>
+
+  <div class="levels-bottom reveal">
+    <a class="btn" href="levels.html">Für den Unterricht</a>
+  </div>
+</section>
+
+
+<style>
+  .levels-path--vivid{
+    position: relative;
+    padding-top: clamp(3.8rem, 7vw, 6.4rem);
+    isolation: isolate;
+  }
+
+  .levels-path--vivid::before{
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 360px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(214, 138, 72, .14), transparent 28%),
+      radial-gradient(circle at 78% 10%, rgba(132, 98, 188, .14), transparent 26%),
+      radial-gradient(circle at 88% 72%, rgba(86, 157, 130, .12), transparent 24%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /*.levels-motivation-text{
+    margin: 0 0 1.35rem;
+    font-size: clamp(1.35rem, 2.6vw, 2.15rem);
+    line-height: 1.14;
+    font-style: italic;
+    font-weight: 600;
+    color: #2e3aa2;;
+    letter-spacing: -0.03em;
+    max-width: 24ch;
+  }*/
+  .levels-motivation-text{
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  line-height: 1.15;
+  font-style: italic;
+  font-weight: 600;
+  color: #2e3aa2;
+  letter-spacing: -0.02em;
+}
+
+  /*.levels-motivation-text{
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #2e3aa2;
+  }*/
+
+
+  .levels-top{
+    margin-bottom: 2.3rem;
+  }
+
+  .levels-kicker{
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    margin: 0 0 1rem;
+    font-size: .78rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #a2552e;
+  }
+
+  .levels-kicker::before{
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(162,85,46,.95), rgba(233,180,116,.45));
+  }
+
+  .levels-intro{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 430px);
+    gap: 1.7rem 2.2rem;
+    align-items: start;
+  }
+
+  .levels-copy h2{
+    margin: 0 0 1rem;
+    font-size: clamp(2.1rem, 4vw, 3.35rem);
+    line-height: .96;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    color: #171310;
+    max-width: 12ch;
+  }
+
+  .levels-lead{
+    margin: 0 0 .9rem;
+    max-width: 62ch;
+    color: #5a5149;
+    font-size: 1.04rem;
+    line-height: 1.72;
+  }
+
+  .levels-note{
+    margin: 0;
+    max-width: 58ch;
+    color: #776d64;
+    font-size: .98rem;
+    line-height: 1.68;
+  }
+
+  .levels-visual{
+    position: relative;
+  }
+
+  .visual-shell{
+    position: relative;
+    padding: 1.25rem;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(29,26,23,.08);
+    background:
+      linear-gradient(145deg, rgba(255,248,239,.92), rgba(247,241,255,.82) 52%, rgba(236,248,242,.8));
+    box-shadow:
+      0 20px 44px rgba(59, 38, 18, .08),
+      inset 0 1px 0 rgba(255,255,255,.7);
+    backdrop-filter: blur(14px);
+  }
+
+  .visual-orb{
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(4px);
+    pointer-events: none;
+  }
+
+  .visual-orb--amber{
+    width: 140px;
+    height: 140px;
+    top: -26px;
+    left: -24px;
+    background: radial-gradient(circle, rgba(228,157,84,.28), rgba(228,157,84,0));
+  }
+
+  .visual-orb--violet{
+    width: 160px;
+    height: 160px;
+    top: 24px;
+    right: -50px;
+    background: radial-gradient(circle, rgba(143,110,201,.22), rgba(143,110,201,0));
+  }
+
+  .visual-orb--mint{
+    width: 120px;
+    height: 120px;
+    bottom: -24px;
+    right: 36px;
+    background: radial-gradient(circle, rgba(90,170,136,.18), rgba(90,170,136,0));
+  }
+
+  .visual-head{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: 1rem;
+  }
+
+  .visual-label,
+  .visual-time{
+    font-size: .76rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 800;
+  }
+
+  .visual-label{
+    color: #261f1a;
+  }
+
+  .visual-time{
+    color: #9a5b20;
+  }
+
+  .progress-rail{
+    position: relative;
+    z-index: 1;
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(35,28,24,.08);
+    margin-bottom: 1rem;
+  }
+
+  .progress-fill{
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 24%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #dd8b44 0%, #bf78b6 55%, #64a889 100%);
+    background-size: 200% 100%;
+    animation: progressLoop 12s ease-in-out infinite;
+  }
+
+  .progress-stops{
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .65rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .progress-stop{
+    display: grid;
+    justify-items: start;
+    gap: .28rem;
+    padding: .7rem .7rem .75rem;
+    border-radius: 18px;
+    background: rgba(255,255,255,.48);
+    border: 1px solid rgba(29,26,23,.06);
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+
+  .stop-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(35,28,24,.16);
+    box-shadow: 0 0 0 5px rgba(35,28,24,.04);
+  }
+
+  .stop-level{
+    font-size: .82rem;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #1d1916;
+  }
+
+  .stop-text{
+    font-size: .8rem;
+    line-height: 1.2;
+    color: #6a6058;
+  }
+
+  .visual-card{
+    position: relative;
+    z-index: 1;
+    padding: 1rem 1rem 1.05rem;
+    border-radius: 22px;
+    background: rgba(255,255,255,.7);
+    border: 1px solid rgba(29,26,23,.07);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+  }
+
+  .visual-card-label{
+    margin: 0 0 .55rem;
+    font-size: .74rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: #8a7465;
+    font-weight: 800;
+  }
+
+  .visual-card h3{
+    margin: 0 0 .55rem;
+    font-size: 1.08rem;
+    line-height: 1.14;
+    font-weight: 600;
+    color: #181310;
+  }
+
+  .visual-card p{
+    margin: 0;
+    color: #5b524b;
+    line-height: 1.62;
+    font-size: .95rem;
+  }
+
+  .levels-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.7rem;
+  }
+
+  .level-tile{
+    position: relative;
+    min-height: 224px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 1.15rem 1.25rem;
+    border-radius: 24px;
+    overflow: hidden;
+    color: inherit;
+    border: 1px solid rgba(29,26,23,.08);
+    box-shadow: 0 16px 34px rgba(59,38,18,.05);
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    animation: tilePulse 12s ease-in-out infinite;
+  }
+
+  .level-tile::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.3));
+    pointer-events: none;
+  }
+
+  .level-tile::after{
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+    transform: scaleX(.35);
+    transform-origin: left;
+    transition: transform .28s ease;
+  }
+
+  .level-tile > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  .level-badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-width: 54px;
+    min-height: 28px;
+    padding: 0 .72rem;
+    margin-bottom: .95rem;
+    border-radius: 999px;
+    font-size: .76rem;
+    line-height: 1;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  .level-tile h3{
+    margin: 0 0 .7rem;
+    font-size: 1.16rem;
+    line-height: 1.12;
+    font-weight: 600;
+    color: #181310;
+    max-width: 18ch;
+  }
+
+  .level-tile p{
+    margin: 0;
+    color: #5b524b;
+    line-height: 1.66;
+    font-size: .97rem;
+    max-width: 28ch;
+  }
+
+  .level-tile--a1{
+    background:
+      radial-gradient(circle at top left, rgba(229,177,103,.28), transparent 34%),
+      linear-gradient(180deg, rgba(255,248,239,.96), rgba(248,238,224,.86));
+    animation-delay: 0s;
+  }
+
+  .level-tile--a1 .level-badge{
+    background: rgba(176,111,49,.12);
+    color: #9a5b20;
+    border: 1px solid rgba(176,111,49,.14);
+  }
+
+  .level-tile--a1::after{
+    background: linear-gradient(90deg, #c47a39, #e0b064);
+  }
+
+  .level-tile--a2{
+    background:
+      radial-gradient(circle at 85% 12%, rgba(241,124,137,.18), transparent 30%),
+      linear-gradient(180deg, rgba(255,244,246,.96), rgba(249,233,237,.88));
+    animation-delay: 3s;
+  }
+
+  .level-tile--a2 .level-badge{
+    background: rgba(205,96,118,.1);
+    color: #a34d61;
+    border: 1px solid rgba(205,96,118,.14);
+  }
+
+  .level-tile--a2::after{
+    background: linear-gradient(90deg, #cc6e7f, #e9a1af);
+  }
+
+  .level-tile--b1{
+    background:
+      radial-gradient(circle at top right, rgba(154,112,181,.2), transparent 34%),
+      linear-gradient(180deg, rgba(248,244,255,.96), rgba(238,232,249,.9));
+    animation-delay: 6s;
+  }
+
+  .level-tile--b1 .level-badge{
+    background: rgba(128,91,159,.1);
+    color: #7d5a97;
+    border: 1px solid rgba(128,91,159,.14);
+  }
+
+  .level-tile--b1::after{
+    background: linear-gradient(90deg, #8b64a7, #c09bdb);
+  }
+
+  .level-tile--b2{
+    background:
+      radial-gradient(circle at 82% 16%, rgba(101,150,128,.22), transparent 30%),
+      linear-gradient(180deg, rgba(241,249,245,.96), rgba(229,241,235,.9));
+    animation-delay: 9s;
+  }
+
+  .level-tile--b2 .level-badge{
+    background: rgba(74,124,102,.1);
+    color: #3f725d;
+    border: 1px solid rgba(74,124,102,.14);
+  }
+
+  .level-tile--b2::after{
+    background: linear-gradient(90deg, #4d836b, #8eb9a4);
+  }
+
+  .progress-stop--a1{ animation: stopPulseA1 12s ease-in-out infinite; }
+  .progress-stop--a2{ animation: stopPulseA2 12s ease-in-out infinite; }
+  .progress-stop--b1{ animation: stopPulseB1 12s ease-in-out infinite; }
+  .progress-stop--b2{ animation: stopPulseB2 12s ease-in-out infinite; }
+
+  .levels-bottom{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: .35rem;
+    border-top: 1px solid rgba(29,26,23,.08);
+  }
+
+  @keyframes progressLoop{
+    0%, 20%{ width: 24%; }
+    25%, 45%{ width: 48%; }
+    50%, 70%{ width: 72%; }
+    75%, 95%{ width: 100%; }
+    100%{ width: 24%; }
+  }
+
+  @keyframes tilePulse{
+    0%, 100%{
+      transform: translateY(0);
+      box-shadow: 0 16px 34px rgba(59,38,18,.05);
+      border-color: rgba(29,26,23,.08);
+    }
+    8%, 18%{
+      transform: translateY(-8px);
+      box-shadow: 0 24px 44px rgba(59,38,18,.1);
+      border-color: rgba(29,26,23,.16);
+    }
+    25%, 100%{
+      transform: translateY(0);
+      box-shadow: 0 16px 34px rgba(59,38,18,.05);
+      border-color: rgba(29,26,23,.08);
+    }
+  }
+
+  @keyframes stopPulseA1{
+    0%, 20%{
+      background: rgba(255,255,255,.78);
+      border-color: rgba(221,139,68,.22);
+      transform: translateY(-2px);
+    }
+    21%, 100%{
+      background: rgba(255,255,255,.48);
+      border-color: rgba(29,26,23,.06);
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes stopPulseA2{
+    0%, 24%, 100%{
+      background: rgba(255,255,255,.48);
+      border-color: rgba(29,26,23,.06);
+      transform: translateY(0);
+    }
+    25%, 45%{
+      background: rgba(255,255,255,.78);
+      border-color: rgba(204,110,127,.22);
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes stopPulseB1{
+    0%, 49%, 100%{
+      background: rgba(255,255,255,.48);
+      border-color: rgba(29,26,23,.06);
+      transform: translateY(0);
+    }
+    50%, 70%{
+      background: rgba(255,255,255,.78);
+      border-color: rgba(143,110,201,.22);
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes stopPulseB2{
+    0%, 74%, 100%{
+      background: rgba(255,255,255,.48);
+      border-color: rgba(29,26,23,.06);
+      transform: translateY(0);
+    }
+    75%, 95%{
+      background: rgba(255,255,255,.78);
+      border-color: rgba(77,131,107,.22);
+      transform: translateY(-2px);
+    }
+  }
+
+  .progress-stop--a1 .stop-dot{
+    animation: dotPulseA1 12s ease-in-out infinite;
+  }
+
+  .progress-stop--a2 .stop-dot{
+    animation: dotPulseA2 12s ease-in-out infinite;
+  }
+
+  .progress-stop--b1 .stop-dot{
+    animation: dotPulseB1 12s ease-in-out infinite;
+  }
+
+  .progress-stop--b2 .stop-dot{
+    animation: dotPulseB2 12s ease-in-out infinite;
+  }
+
+  @keyframes dotPulseA1{
+    0%, 20%{ background: #dd8b44; box-shadow: 0 0 0 6px rgba(221,139,68,.16); }
+    21%, 100%{ background: rgba(35,28,24,.16); box-shadow: 0 0 0 5px rgba(35,28,24,.04); }
+  }
+
+  @keyframes dotPulseA2{
+    0%, 24%, 100%{ background: rgba(35,28,24,.16); box-shadow: 0 0 0 5px rgba(35,28,24,.04); }
+    25%, 45%{ background: #cc6e7f; box-shadow: 0 0 0 6px rgba(204,110,127,.16); }
+  }
+
+  @keyframes dotPulseB1{
+    0%, 49%, 100%{ background: rgba(35,28,24,.16); box-shadow: 0 0 0 5px rgba(35,28,24,.04); }
+    50%, 70%{ background: #8f6ec9; box-shadow: 0 0 0 6px rgba(143,110,201,.16); }
+  }
+
+  @keyframes dotPulseB2{
+    0%, 74%, 100%{ background: rgba(35,28,24,.16); box-shadow: 0 0 0 5px rgba(35,28,24,.04); }
+    75%, 95%{ background: #4d836b; box-shadow: 0 0 0 6px rgba(77,131,107,.16); }
+  }
+
+  @media (max-width: 1100px){
+    .levels-grid{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 920px){
+    .levels-intro{
+      grid-template-columns: 1fr;
+    }
+
+    .levels-copy h2,
+    .levels-motivation-text{
+      max-width: none;
+    }
+
+    .levels-lead,
+    .levels-note{
+      max-width: 100%;
+    }
+
+    .levels-visual{
+      max-width: 560px;
+    }
+  }
+
+  @media (max-width: 640px){
+    .levels-grid{
+      grid-template-columns: 1fr;
+      gap: .85rem;
+    }
+
+    .level-tile{
+      min-height: auto;
+      padding: 1rem 1rem 1.1rem;
+      border-radius: 20px;
+      animation: none;
+    }
+
+    .visual-shell{
+      padding: 1rem;
+      border-radius: 24px;
+    }
+
+    .progress-stops{
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .levels-copy h2{
+      font-size: clamp(2rem, 9vw, 3.1rem);
+      line-height: 1.01;
+    }
+
+    .progress-fill,
+    .progress-stop,
+    .progress-stop .stop-dot{
+      animation-duration: 10s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .progress-fill,
+    .level-tile,
+    .progress-stop,
+    .progress-stop .stop-dot{
+      animation: none !important;
+    }
+
+    .progress-fill{
+      width: 72%;
+    }
+  }
+</style>
+
   </main>
 
   <footer class="site-footer container">
