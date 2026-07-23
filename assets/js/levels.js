@@ -44,12 +44,18 @@ function groupLessonsByLevel(lessons) {
 }
 
 function updateLevelHeadings(levels) {
+  const a1Title = document.querySelector('#a1 h2');
+  const a2Title = document.querySelector('#a2 h2');
   const b1Title = document.querySelector('#b1 h2');
   const b2Title = document.querySelector('#b2 h2');
 
+  const a1 = levels.find(level => level.level === 'A1');
+  const a2 = levels.find(level => level.level === 'A2');
   const b1 = levels.find(level => level.level === 'B1');
   const b2 = levels.find(level => level.level === 'B2');
 
+  if (a1Title && a1?.title) a1Title.textContent = a1.title;
+  if (a2Title && a2?.title) a2Title.textContent = a2.title;
   if (b1Title && b1?.title) b1Title.textContent = b1.title;
   if (b2Title && b2?.title) b2Title.textContent = b2.title;
 }
@@ -64,6 +70,8 @@ async function initLevelsPage() {
 
   const grouped = groupLessonsByLevel(lessons);
 
+  renderLessonCards('a1Lessons', grouped.A1 || []);
+  renderLessonCards('a2Lessons', grouped.A2 || []);
   renderLessonCards('b1Lessons', grouped.B1 || []);
   renderLessonCards('b2Lessons', grouped.B2 || []);
 }

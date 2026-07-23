@@ -29,7 +29,7 @@
   ]
   },
      {
-    "id": "a1-01",
+    "id": "a1-02",
     "level": "A1",
     "topic": "Sich vorstellen",
     "title": "Hallo, wer bist du?",
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "id": "a1-02",
+    "id": "a1-03",
     "level": "A1",
     "topic": "Essen und Trinken",
     "title": "Im Supermarkt einkaufen",
@@ -85,7 +85,7 @@
     ]
   },
   {
-    "id": "a1-03",
+    "id": "a1-04",
     "level": "A1",
     "topic": "Tagesablauf",
     "title": "Mein Tag",
@@ -110,6 +110,35 @@
       "Was macht sie um acht Uhr?",
       "Wo arbeitet sie?",
       "Wann geht sie schlafen?"
+    ]
+  },
+  {
+    "id": "a1-05",
+    "level": "A1",
+    "topic": "Reisen",
+    "title": "Eine Reise ans Meer",
+    "description": "Ein Urlaub am Meer in Spanien.",
+    "sentences": [
+      "Im Sommer reise ich nach Spanien.",
+      "Ich fliege mit dem Flugzeug von Frankfurt nach Barcelona.",
+      "Das Wetter dort ist sehr heiß und sonnig.",
+      "Ich buche ein Hotelzimmer für eine Woche.",
+      "Das Hotel liegt direkt am Strand.",
+      "Ich schwimme im Meer, lese ein Buch und trinke kalte Limonade.",
+      "Das ist mein Traumurlaub!!"
+    ],
+    "vocabulary": [
+      { "de": "ich reise", "ru": "Я путешествую" },
+      { "de": "fliegen", "ru": "летать" },
+      { "de": "das Flugzeug", "ru": "самолет" },
+      { "de": "buchen", "ru": "бронировать" },
+      { "de": "am Strand", "ru": "на пляже" }
+    ],
+    "questions": [
+      "Wohin reist der Autor im Sommer?",
+      "Wie fliegt er nach Barcelona?",
+      "Was macht er am Strand?",
+      "Was ist Ihr Traumurlaub?"
     ]
   },
   {
@@ -197,7 +226,7 @@
     ]
   },
   {
-  "id": "a2-01",
+  "id": "a2-04",
   "level": "A2",
   "topic": "Arbeit und Alltag",
   "title": "Mein Arbeitstag",
@@ -256,7 +285,7 @@
     "id": "b1-02",
     "level": "B1",
     "topic": "Wohnen",
-    "title": "Поиск квартиры",
+    "title": "Wohnungssuche",
     "description": "Урок о поиске квартиры, осмотре и выборе между ценой и расположением.",
     "sentences": [
       "Meine Schwester sucht seit Wochen eine Wohnung in der Innenstadt.",
@@ -281,7 +310,7 @@
     "id": "b2-01",
     "level": "B2",
     "topic": "Meinung",
-    "title": "Мнение о технологиях",
+    "title": "Meinung zur Technologie",
     "description": "Более сложный текст о преимуществах и недостатках цифровых привычек.",
     "sentences": [
       "Digitale Geräte erleichtern unseren Alltag, aber sie können auch ablenken.",

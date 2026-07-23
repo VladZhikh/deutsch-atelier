@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deutsch Atelier — Уровни</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body data-page="levels">
   <header class="site-header">
@@ -36,27 +39,725 @@
     </div>
   </header>
 
-  <main class="container section">
-    <div class="section-head">
-      <h1 data-i18n="levels_title">Каталог уровней</h1>
-      <p data-i18n="levels_text">Начните с одного текста — и доведите его до уверенной речи.</p>
-    </div>
+  <main class="levels-page">
+    <section class="container section">
+      <div class="hero">
+        <div class="hero-copy reveal">
+          <p class="hero-kicker">Deutsch Atelier</p>
+          <h1 data-i18n="levels_title">Каталог уровней</h1>
+          <p class="intro-line">Von A1 bis B2 — Schritt für Schritt zu sicherem Deutsch.</p>
+          <p class="hero-text" data-i18n="levels_text">
+            Начните с одного текста — и доведите его до уверенной речи.
+          </p>
 
-    <section id="b1" class="level-section">
-      <h2 data-i18n="levels_b1_title">B1</h2>
-      <div id="b1Lessons" class="lesson-grid"></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#a1">Начать с A1</a>
+            <a class="btn btn-secondary" href="#catalog">Смотреть все уровни</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Путь по уровням">
+          <div class="panel-top">
+            <span>Маршрут</span>
+            <span>10–15 минут в день</span>
+          </div>
+
+          <div class="journey-line" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <div class="journey-stops">
+            <div class="journey-stop a1">
+              <strong>A1</strong>
+              <span>Старт и базовые фразы</span>
+            </div>
+            <div class="journey-stop a2">
+              <strong>A2</strong>
+              <span>Повседневные разговоры</span>
+            </div>
+            <div class="journey-stop b1">
+              <strong>B1</strong>
+              <span>Темы жизни и работы</span>
+            </div>
+            <div class="journey-stop b2">
+              <strong>B2</strong>
+              <span>Аргументы и пересказ</span>
+            </div>
+          </div>
+
+          <div class="panel-note">
+            <p><strong>Один уровень — это не гонка.</strong> Выберите подходящий блок, тренируйте речь короткими подходами и переходите дальше, когда чувствуете уверенность.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="levels-overview">
+        <a class="overview-link a1 reveal" href="#a1">
+          <small>A1</small>
+          <h2>Начало</h2>
+          <p>Простые фразы, короткие вопросы, бытовые ситуации.</p>
+        </a>
+
+        <a class="overview-link a2 reveal" href="#a2">
+          <small>A2</small>
+          <h2>Уверенная база</h2>
+          <p>Ежедневные темы, планы, поездки, диалоги подлиннее.</p>
+        </a>
+
+        <a class="overview-link b1 reveal" href="#b1">
+          <small>B1</small>
+          <h2>Жизненные темы</h2>
+          <p>Работа, жильё, здоровье, встречи и пересказ.</p>
+        </a>
+
+        <a class="overview-link b2 reveal" href="#b2">
+          <small>B2</small>
+          <h2>Свободнее и глубже</h2>
+          <p>Мнения, аргументы, обсуждения и сложные тексты.</p>
+        </a>
+      </div>
     </section>
 
-    <section id="b2" class="level-section">
-      <h2 data-i18n="levels_b2_title">B2</h2>
-      <div id="b2Lessons" class="lesson-grid"></div>
+    <section id="catalog" class="container section catalog" aria-label="Уровни обучения">
+      <section id="a1" class="level-section a1 reveal">
+        <div class="level-meta">
+          <span class="level-pill a1" data-i18n="levels_a1_title">A1</span>
+          <h2>Базовый старт</h2>
+          <p data-i18n="levels_a1_text">
+            Vorstellungen, Einkaufen, Reisen, Zahlen, kurze Fragen und Alltagssituationen.
+          </p>
+          <p class="meta-note">Подходит для первого знакомства с языком и коротких повседневных диалогов.</p>
+        </div>
+        <div id="a1Lessons" class="lesson-grid"></div>
+      </section>
+
+      <section id="a2" class="level-section a2 reveal">
+        <div class="level-meta">
+          <span class="level-pill a2" data-i18n="levels_a2_title">A2</span>
+          <h2>Ежедневная практика</h2>
+          <p data-i18n="levels_a2_text">
+            Pläne, Besprechungen, Reisen, Tagesthemen und längere Antworten im Dialog.
+          </p>
+          <p class="meta-note">Для тех, кто уже понимает основы и хочет отвечать более свободно.</p>
+        </div>
+        <div id="a2Lessons" class="lesson-grid"></div>
+      </section>
+
+      <section id="b1" class="level-section b1 reveal">
+        <div class="level-meta">
+          <span class="level-pill b1" data-i18n="levels_b1_title">B1</span>
+          <h2>Жизненные темы</h2>
+          <p data-i18n="levels_b1_text">
+            Arbeit, Wohnen, Gesundheit, Reisen, Besprechungen.
+          </p>
+          <p class="meta-note">Здесь начинается более уверенная речь: пересказ, объяснения и связь идей.</p>
+        </div>
+        <div id="b1Lessons" class="lesson-grid"></div>
+      </section>
+
+      <section id="b2" class="level-section b2 reveal">
+        <div class="level-meta">
+          <span class="level-pill b2" data-i18n="levels_b2_title">B2</span>
+          <h2>Аргументы и глубина</h2>
+          <p data-i18n="levels_b2_text">
+            Meinungen, Argumente, Pläne, Diskussionen.
+          </p>
+          <p class="meta-note">Для более длинных высказываний, обсуждений и уверенного понимания текста.</p>
+        </div>
+        <div id="b2Lessons" class="lesson-grid"></div>
+      </section>
     </section>
 
-    <section class="level-section">
-      <h2 data-i18n="levels_other_title">A1 / A2</h2>
-      <p data-i18n="levels_other_text">Эти уровни можно добавить позже как короткие вводные разделы.</p>
-    </section>
+    <style>
+    :root{
+      --bg: #f7f3ee;
+      --bg-soft: #fbf8f4;
+      --paper: rgba(255,255,255,.72);
+      --text: #171310;
+      --muted: #655b53;
+      --line: rgba(27,22,19,.08);
+
+      --blue: #2257ff;
+      --amber: #d78646;
+      --rose: #cf7285;
+      --violet: #8764be;
+      --mint: #4f8a72;
+
+      --a1-bg: linear-gradient(180deg, rgba(255,248,239,.98), rgba(248,238,224,.9));
+      --a2-bg: linear-gradient(180deg, rgba(255,244,246,.98), rgba(249,233,237,.9));
+      --b1-bg: linear-gradient(180deg, rgba(248,244,255,.98), rgba(238,232,249,.92));
+      --b2-bg: linear-gradient(180deg, rgba(241,249,245,.98), rgba(229,241,235,.92));
+
+      --shadow: 0 20px 50px rgba(56,37,18,.08);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(216,134,70,.08), transparent 24%),
+        radial-gradient(circle at 88% 10%, rgba(135,100,190,.09), transparent 22%),
+        radial-gradient(circle at 82% 84%, rgba(79,138,114,.08), transparent 20%),
+        var(--bg);
+    }
+
+    a{ color: inherit; }
+    img{ max-width: 100%; display: block; }
+
+    .container{
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section{
+      padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+    }
+
+    .levels-page{
+      position: relative;
+      overflow: clip;
+    }
+
+    .levels-page::before{
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 420px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(216,134,70,.15), transparent 28%),
+        radial-gradient(circle at 76% 10%, rgba(135,100,190,.14), transparent 24%),
+        radial-gradient(circle at 88% 60%, rgba(79,138,114,.12), transparent 22%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 460px);
+      gap: 1.5rem 2rem;
+      align-items: start;
+      padding-top: clamp(2rem, 3vw, 3rem);
+    }
+
+    .hero-copy{
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .hero-kicker{
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      color: #9a5c2f;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+      font-size: .8rem;
+    }
+
+    .hero-kicker::before{
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(154,92,47,.95), rgba(216,134,70,.35));
+    }
+
+    .hero-copy h1{
+      margin: 0;
+      max-width: 10ch;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .9;
+      letter-spacing: -.05em;
+      font-weight: 600;
+    }
+
+    .hero-copy .intro-line{
+      margin: .25rem 0 0;
+      max-width: 20ch;
+      font-size: clamp(1.25rem, 2.4vw, 2rem);
+      line-height: 1.08;
+      color: var(--blue);
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .hero-copy .hero-text{
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: .5rem;
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .95rem;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(34,87,255,.14);
+    }
+
+    .btn-primary{
+      color: #fff;
+      background: linear-gradient(135deg, #2257ff, #5b84ff);
+    }
+
+    .btn-secondary{
+      background: rgba(255,255,255,.6);
+      border-color: rgba(27,22,19,.08);
+      color: var(--text);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-panel{
+      position: relative;
+      padding: 1.25rem;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255,248,239,.88), rgba(248,243,255,.82) 54%, rgba(236,248,242,.82));
+      border: 1px solid rgba(27,22,19,.08);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      overflow: hidden;
+    }
+
+    .hero-panel::before,
+    .hero-panel::after{
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .hero-panel::before{
+      width: 180px;
+      height: 180px;
+      top: -36px;
+      right: -24px;
+      background: radial-gradient(circle, rgba(135,100,190,.22), transparent 72%);
+    }
+
+    .hero-panel::after{
+      width: 140px;
+      height: 140px;
+      bottom: -24px;
+      left: -24px;
+      background: radial-gradient(circle, rgba(216,134,70,.2), transparent 72%);
+    }
+
+    .panel-top{
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: .75rem;
+      margin-bottom: 1rem;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+
+    .panel-top span:first-child{ color: #261f1a; }
+    .panel-top span:last-child{ color: #8e5d33; }
+
+    .journey-line{
+      position: relative;
+      z-index: 1;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(27,22,19,.08);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .journey-line span{
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 76%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--amber), var(--rose) 38%, var(--violet) 68%, var(--mint));
+      background-size: 160% 100%;
+      animation: lineShift 7s linear infinite;
+    }
+
+    .journey-stops{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .65rem;
+      margin-bottom: 1rem;
+    }
+
+    .journey-stop{
+      padding: .8rem .75rem;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.54);
+      border: 1px solid rgba(27,22,19,.06);
+    }
+
+    .journey-stop strong{
+      display: block;
+      font-size: .84rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: .25rem;
+    }
+
+    .journey-stop span{
+      font-size: .8rem;
+      color: #6a6058;
+      line-height: 1.25;
+    }
+
+    .journey-stop.a1 strong{ color: #9a5b20; }
+    .journey-stop.a2 strong{ color: #a34d61; }
+    .journey-stop.b1 strong{ color: #7a58a2; }
+    .journey-stop.b2 strong{ color: #3f725d; }
+
+    .panel-note{
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(27,22,19,.06);
+    }
+
+    .panel-note p{
+      margin: 0;
+      color: #5d544d;
+      line-height: 1.65;
+      font-size: .96rem;
+    }
+
+    .panel-note p strong{
+      color: #1b1714;
+    }
+
+    .levels-overview{
+      position: relative;
+      z-index: 1;
+      margin-top: 2.25rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .9rem;
+    }
+
+    .overview-link{
+      position: relative;
+      min-height: 148px;
+      padding: 1rem;
+      border-radius: 24px;
+      text-decoration: none;
+      border: 1px solid rgba(27,22,19,.08);
+      box-shadow: 0 14px 34px rgba(56,37,18,.05);
+      overflow: hidden;
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+
+    .overview-link:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 22px 42px rgba(56,37,18,.09);
+    }
+
+    .overview-link::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.28));
+      pointer-events: none;
+    }
+
+    .overview-link > *{
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-link small{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 54px;
+      min-height: 28px;
+      padding: 0 .72rem;
+      border-radius: 999px;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: .85rem;
+    }
+
+    .overview-link h2{
+      margin: 0 0 .45rem;
+      font-size: 1.15rem;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .overview-link p{
+      margin: 0;
+      font-size: .94rem;
+      line-height: 1.6;
+      color: #5d544d;
+    }
+
+    .overview-link.a1{ background: var(--a1-bg); }
+    .overview-link.a2{ background: var(--a2-bg); }
+    .overview-link.b1{ background: var(--b1-bg); }
+    .overview-link.b2{ background: var(--b2-bg); }
+
+    .overview-link.a1 small{ background: rgba(176,111,49,.12); color: #9a5b20; border: 1px solid rgba(176,111,49,.14); }
+    .overview-link.a2 small{ background: rgba(205,96,118,.1); color: #a34d61; border: 1px solid rgba(205,96,118,.14); }
+    .overview-link.b1 small{ background: rgba(128,91,159,.1); color: #7d5a97; border: 1px solid rgba(128,91,159,.14); }
+    .overview-link.b2 small{ background: rgba(74,124,102,.1); color: #3f725d; border: 1px solid rgba(74,124,102,.14); }
+
+    .catalog{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .level-section{
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: 1.1rem 1.25rem;
+      padding: 1.25rem;
+      border-radius: 30px;
+      border: 1px solid rgba(27,22,19,.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .level-section::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,.18));
+      pointer-events: none;
+    }
+
+    .level-section > *{
+      position: relative;
+      z-index: 1;
+    }
+
+    .level-section.a1{ background: var(--a1-bg); }
+    .level-section.a2{ background: var(--a2-bg); }
+    .level-section.b1{ background: var(--b1-bg); }
+    .level-section.b2{ background: var(--b2-bg); }
+
+    .level-meta{
+      display: grid;
+      align-content: start;
+      gap: .8rem;
+      padding-right: .5rem;
+    }
+
+    .level-pill{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: 60px;
+      min-height: 32px;
+      padding: 0 .85rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .level-pill.a1{ background: rgba(176,111,49,.12); color: #9a5b20; border: 1px solid rgba(176,111,49,.14); }
+    .level-pill.a2{ background: rgba(205,96,118,.1); color: #a34d61; border: 1px solid rgba(205,96,118,.14); }
+    .level-pill.b1{ background: rgba(128,91,159,.1); color: #7d5a97; border: 1px solid rgba(128,91,159,.14); }
+    .level-pill.b2{ background: rgba(74,124,102,.1); color: #3f725d; border: 1px solid rgba(74,124,102,.14); }
+
+    .level-meta h2{
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.1rem, 3vw, 3rem);
+      line-height: .9;
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+
+    .level-meta p{
+      margin: 0;
+      color: #5c534c;
+      font-size: .98rem;
+      line-height: 1.65;
+      max-width: 30ch;
+    }
+
+    .level-meta .meta-note{
+      padding-top: .4rem;
+      border-top: 1px solid rgba(27,22,19,.08);
+      color: #7a6f66;
+      font-size: .85rem;
+      line-height: 1.55;
+    }
+
+    .lesson-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .9rem;
+      align-content: start;
+      min-height: 140px;
+    }
+
+    .lesson-grid:empty::before{
+      content: "Здесь появятся уроки этого уровня.";
+      display: grid;
+      place-items: center;
+      min-height: 140px;
+      padding: 1rem;
+      border-radius: 22px;
+      border: 1px dashed rgba(27,22,19,.12);
+      background: rgba(255,255,255,.42);
+      color: #7c7067;
+      font-size: .95rem;
+      text-align: center;
+    }
+
+    .site-footer{
+      padding: 1rem 0 2.5rem;
+      color: #6c625a;
+      font-size: .95rem;
+    }
+
+    .reveal{
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp .7s ease forwards;
+    }
+
+    .hero .reveal:nth-child(1){ animation-delay: .05s; }
+    .hero .reveal:nth-child(2){ animation-delay: .18s; }
+    .levels-overview .overview-link:nth-child(1){ animation-delay: .08s; }
+    .levels-overview .overview-link:nth-child(2){ animation-delay: .16s; }
+    .levels-overview .overview-link:nth-child(3){ animation-delay: .24s; }
+    .levels-overview .overview-link:nth-child(4){ animation-delay: .32s; }
+    .catalog .level-section:nth-child(1){ animation-delay: .08s; }
+    .catalog .level-section:nth-child(2){ animation-delay: .16s; }
+    .catalog .level-section:nth-child(3){ animation-delay: .24s; }
+    .catalog .level-section:nth-child(4){ animation-delay: .32s; }
+
+    @keyframes fadeUp{
+      to{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes lineShift{
+      0%{ background-position: 0% 50%; }
+      100%{ background-position: 100% 50%; }
+    }
+
+    @media (max-width: 1080px){
+      .levels-overview{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .lesson-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 920px){
+      .hero{
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1,
+      .hero-copy .intro-line{
+        max-width: none;
+      }
+
+      .level-section{
+        grid-template-columns: 1fr;
+      }
+
+      .level-meta p{
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero-panel,
+      .level-section{
+        padding: 1rem;
+        border-radius: 24px;
+      }
+
+      .journey-stops,
+      .levels-overview{
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1{
+        font-size: clamp(2.8rem, 14vw, 4.6rem);
+      }
+
+      .hero-copy .intro-line{
+        font-size: clamp(1.2rem, 6vw, 1.7rem);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .reveal,
+      .journey-line span{
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
   </main>
+
 
   <footer class="site-footer container">
     <p data-i18n="footer_text">Deutsch Atelier · открытый сайт для изучения немецкого.</p>
